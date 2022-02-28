@@ -1,0 +1,14 @@
+** 기본 명령어 **
+cd : 폴더 이동 (뒤로 가기는 cd..)
+dir : 폴더 안에 있는 파일 목록 보여줌
+
+** 코드를 github에 올리는 git 명령어 **
+1) git add .
+2) git commit -m "commit에 쓰고 싶은 말"
+3) git push
+
+git pull : github에 있는 코드를 불러오는 명령어 (다른 곳에서 작업했다가 가져올 때, 남이 작업한 것 가져올 때)
+git clone 주소(github에서 코드 메뉴를 통해 복사 가능) : 내 PC에 복제 (최초로 가져올 때)
+    VS code 팔레트에서 >git clone으로 동일하게 가능
+commit : 코드를 내 PC에 업로드 (아직 git에 올라가지 않음)
+push : git 서버에 업로드
