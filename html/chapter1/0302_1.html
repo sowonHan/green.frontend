@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3/2 수업메모</title>
+</head>
+<body>
+    예전에는 table로 레이아웃을 잡았다. 요즘은 게시판으로 자주 사용한다.
+    <p>레이아웃 잡는 데 사용하는 태그</p>
+    <br />
+    flex(div, ul) - float(div, ul) - table (왼쪽부터 최근에 주로 사용하는 것)
+
+    <table border="1">
+        <!-- border는 테두리 주는 속성 -->
+        <tr>
+            <!-- th에서 h는 head의 약자 -->
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 1</td>
+        </tr>
+        <tr>
+            <td>Data 2</td>
+            <td>Data 2</td>
+        </tr>
+    </table>
+    <hr />
+    <table border="1">
+        <caption>Caption</caption>
+        <!-- caption은 게시판 제목 -->
+        <colgroup>
+            <!-- column은 열 (약어가 col), row는 행 -->
+            <col span="2" style="background: red" />
+            <col style="background: blue" />
+        </colgroup>
+        <thead style="background: green">
+            <tr>
+                <th>Table Header</th>
+                <th>Table Header</th>
+                <th>Table Header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+            <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+            <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+        </tbody>
+        <tfoot style="background: yellow">
+            <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr />
+    <table border="1">
+        <tr>
+            <!-- colspan은 열(가로)병합 (셀의 너비 지정), rowspan은 행(세로)병합 (셀의 높이 지정) -->
+            <th colspan="3">Table Data</th>
+            <th rowspan="3">Table Data</th>
+        </tr>
+        <tr>
+            <td>Table Data</td>
+            <td rowspan="2">Table Data</td>
+            <td>Table Data</td>
+        </tr>
+        <tr>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+    </table>
+    <hr />
+    <!-- src의 경로 : 상대경로 / 절대경로 -->
+    <!-- 이미지 파일명은 영문, 숫자, _로 해야한다. 코드파일명도 한글로 쓰면 깨질 수 있음 -->
+    <img src="Penguins.jpg" alt="펭귄" width="300" />
+    <!-- alt는 웹 접근성을 위해서 꼭 넣어주자!
+        시각장애인의 경우 해당 태그의 텍스트가 음성으로 지원돼서 이미지를 확인한다고 함 -->
+    <img src="Nothing" alt="그림이 존재하지 않습니다." width="300" />
+    <!-- width를 지정해주면 자동으로 비율을 맞춰서 높이를 적용한다. -->
+    <hr />
+    <audio src="Kalimba.mp3" controls="controls"></audio>
+    <!-- 크롬, 엣지 등 최선 브라우저에서는 웹 접근성 때문에 오디오와 비디오의 autoplay 태그를 통한 자동재생을 막아놨다. -->
+    <!-- 자동재생을 시키려면 라이브러리를 이용하는 등 여러 가지 방법이 있긴 함 -->
+    <!-- preload는 재생하기 전에 파일을 미리 불러와놓는 것을 의미. 용량으로 인한 로딩의 문제로 미리 해두는 게 낫긴 함 -->
+</body>
+</html>
