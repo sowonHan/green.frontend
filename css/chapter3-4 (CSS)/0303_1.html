@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3월 3일 1차 메모</title>
+    <style>
+            /* id 속성값으로 header를 가지는 태그의 후손 위치에 있는 h1 태그의 color 속성에 red 키워드를 적용 */
+            /* 한 칸 띄우면 후손 선택자들을 선택할 수 있다.
+            #header #nav 이렇게도 가능하고 #header .class 이렇게도 가능*/
+            /* #header h1, h2 이렇게 쓸 경우 id 값이 header인 태그의 후손 위치에 있는 h1과 일반적인 h2 태그를 선택해서 적용하게 된다. */
+        #header h1, #header h2 { color: red; }
+
+            /* id 속성값으로 header를 가지는 태그의 자손 위치에 있는 h1 태그의
+           color 속성에 red 키워드를 적용합니다. */
+        #header > h1 { color: orange; }
+        
+        /* li:nth-child(2n+1) { background-color:#800000; } */
+        /* 2n+1(홀수)이나 2n(짝수) 같은 수열 대신에 그냥 1,2,3 같은 숫자 넣어도 된다. */
+        /* n은 모두 선택과 마찬가지 */
+        /* li:nth-last-child(2n+1) { background-color:#800000; } 이건 뒤에서부터 순서 */
+
+        /* 종류에 상관없이 무조건 첫 번째 태그부터 검색. p 태그 상관없이 첫번째를 찾아버려서 적용 안 됨 */
+        /* div 없애고 p부터 하면 차이 없다 */
+        div p:first-child {
+            background: red; 
+        }
+        /* 지정된 태그 형태(type)까지 보기 때문에 적용이 된다. */
+        div p:first-of-type {
+            background: blue;
+        }
+
+        p::first-letter { font-size: 3em; }
+        /* em은 배. 3em이면 3배라는 뜻 */
+
+        /* counter-increment: rint는 CSS 기능 중 하나인데 자체적으로 숫자를 세주는 기능 */
+        p { counter-increment: rint; }
+        p::before { content: counter(rint) "."; }
+        p::after { content: " - " attr(data-page) " page"; }
+        /* attr은 attribute(속성)의 약자. ((속성값은 attribute value))
+        CSS에서 제공하는 기능 중 하나인데, p 태그에서 괄호 안에 든 값을 가져오겠다는 뜻 */
+        /* content는 내용을 넣는 기능 */
+
+        a { text-decoration: none; }
+        /* 초기화 태그. a 태그가 디폴트로 하이퍼링크처럼 색이 있고 밑줄이 쳐있기 때문에 그걸 없애주기 위해 사용 */
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <h2>라라라</h2>
+        <div id="nav">
+            <h1>나나나</h1>
+        </div>
+    </div>
+    <h2>바바바</h2>
+
+    <div>
+        <h1>test1</h1>
+        <p>Lorem1</p>
+        <h2>test2</h2>
+        <p>Lorem2</p>
+        <h3>test3</h3>
+    </div>
+
+    <h1>Lorem ipsum dolor sit amet</h1>
+
+    <p data-page="52">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed nisi velit. Phasellus suscipit pellentesque leo, vel efficitur mi placerat sed. Fusce vel condimentum leo, at iaculis ante. Suspendisse posuere, dolor non tempor ullamcorper, nisl elit facilisis erat, nec lacinia augue erat id lacus. Curabitur mollis, justo nec lobortis hendrerit, libero nunc aliquam lacus, ut tristique sem nunc eu metus. Quisque varius orci eu felis sollicitudin malesuada. Vivamus pretium ligula velit, eget facilisis enim imperdiet ac.</p>
+    <p data-page="273">Nam enim sem, pulvinar sed nibh non, vestibulum suscipit dui. Vestibulum vitae sodales velit. Nam cursus, velit id semper malesuada, sem mauris iaculis diam, sit amet auctor ligula lectus in eros. Aliquam tincidunt semper odio, sit amet ornare neque tristique ut. Suspendisse placerat consequat lectus ut varius. Aliquam in ligula non massa auctor porta. Proin auctor mattis elit sit amet tincidunt. Cras auctor mauris augue, et volutpat diam iaculis vitae.</p>
+
+</body>
+</html>

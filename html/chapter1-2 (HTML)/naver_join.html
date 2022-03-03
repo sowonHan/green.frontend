@@ -13,15 +13,25 @@
             margin: auto;
             display: block;
         }
-
-
+        /* 네이버 회원가입창 참고해서 해봤는데 되다 말았음. 이유는 모르겠다 */
+        .box {
+            display: block;
+            max-width: 700px;
+            min-width: 300px;
+            margin: 0 auto;
+        }
+        /* 적용 안 됨ㅜㅜ */
+        .button {
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
     <div>
         <img class="logo" src="https://wiizmkrstorage.blob.core.windows.net/content/wi_user_132634498236453514_24e2e980-d5fb-44e7-9c62-8940d48b11a0.png" alt="네이버" width="500">
     </div>
-    <div>
+    <div class="box">
         <h4 style="font-weight: bold;">아이디</h4>
         <label for="id" ></label>
         <input id="id" type="email" size="30" placeholder="@naver.com">
@@ -85,9 +95,9 @@
         </div>
     </div>
 
-    <div>
+    <div class="button">
         <button>가입하기</button>
     </div>
-
+</div>
 </body>
 </html>

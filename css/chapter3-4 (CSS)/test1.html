@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>실습용 파일</title>
+    <style>
+        h1:hover { color : royalblue; }
+        h1:active { color : red; }
+
+        .section { background-color: cadetblue; }
+        .section > h1 { color : greenyellow; }
+        .section h1:hover { color : plum; }
+
+        .section2 h3 + h4 {color: yellow;}
+        .section2 h3 ~ h4 { background-color: indianred;}
+
+        input:focus {background-color: khaki;}
+        input:disabled {background-color: rgb(177, 189, 189);}
+    </style>
+</head>
+<body>
+    <h1>실습용 페이지</h1>
+
+    <div class="section">
+        <h1>아무말</h1>
+        <div>
+            <h1>아무말2</h1>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quo quisquam rem perspiciatis! Sapiente, possimus fugiat, unde maiores quaerat exercitationem sequi deserunt cum nostrum debitis labore, accusamus cumque itaque. Sapiente?</p>
+    </div>
+
+    <div class="section2">
+        <h3>기준점</h3>
+        <h4>대상1</h4>
+        <h4>대상2</h4>
+        <h4>대상3</h4>
+        <h4>대상4</h4>
+    </div>
+
+    <div>
+        <input placeholder="enabled">
+        <input value="enabled222">
+        <input value="disabled" disabled>
+        <input type="checkbox">
+    </div>
+</body>
+</html>
