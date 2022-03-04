@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>3월 4일 2차 메모</title>
+    
+    <style>
+        .circle {
+            border: thick dashed black;
+            /* border-radius: 왼쪽위 오른쪽위 오른쪽아래 왼쪽아래
+            margin, padding처럼 상하/좌우 이런 식으로 줄여서 쓸 수 있다 */
+            /* border-radius: 50px 40px 20px 10px; */
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            /* 너비랑 높이 지정하고 border-radius를 50%로 주면 원을 만들 수 있다. */
+        }
+        body {
+            /* 교재는 이미지 중첩이라는데 선생님은 전자가 안 보일 경우 후자가 나온다고 하심 */
+            background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+            background-size: 100%;
+            /* 사용자가 보는 가시 영역을 View Port(뷰포트)라고 부른다.
+            뷰포트 크기만큼 사이즈가 맞춰지게 하는 기능 */
+            /* background-size : 100% 250px 이렇게 하면 '너비 높이' 순서라고 보면 됨
+            2개로 지정하지 않으면 너비만 지정되고 높이는 그 비율에 알아서 맞춰진다.*/
+            /* background-size : 100%, 200% 이렇게 하면 중첩된 이미지별로 사이즈 지정 */
+            /* background-size 속성 중 contain은 뷰포트 안에 이미지 원래 사이즈 상태로 포함시키는 것이고
+                cover는 이미지로 뷰포트를 덮는다는 개념. 바탕화면 설정 생각하면 될 듯. */
+            background-repeat: no-repeat;
+            background-position: center;
+            /* position은 뷰포트 기준. 0px 50% 이렇게 가로 x축 세로 y축으로 지정 가능.*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="circle">
+        <h1>Lorem ipsum dolor amet</h1>
+    </div>
+    <p>background는 실제 배경화면보다는 사이트에 들어가는 이미지에서 많이 쓰인다.
+        이미지 위에 다른 텍스트와 효과가 들어가는 경우 특히 그렇다.
+        img 태그로는 다른 태그를 붙이는 게 안 되기 때문에
+    </p>
+</body>
+</html>

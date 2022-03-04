@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3월 4일 1차 메모</title>
+    <style>
+        #box {
+            /* display: none; */
+            visibility: hidden;
+            /* display none은 아예 그 태그를 없앤 것처럼 안 보이게 하는 거고,
+            visibility hidden은 화면에 보이지만 않게 할 뿐 (inline이든 block이든) 태그의 콘텐츠가 보유한 공간은 그대로 남긴다. */
+        }
+        #box2 {
+            display: inline-block;
+            /* inline : width와 height은 적용이 안 되고, margin과 padding은 좌우만 적용됨
+            테두리 만들어두고 상하를 설정해보면 테두리에 여백이 생기기는 한다.
+            그러나 막상 inline 태그의 컨텐츠에는 적용이 안 되기 때문에, 결국 이어지는 다른 콘텐츠와 겹치게 된다.*/
+            /* inline-block : width, height, margin 상하좌우 전부 적용됨.
+            그러나 inline의 속성은 계속 가져서 옆으로 정렬됨 */
+            margin: 0 30px; padding: 0 30px;
+            /* margin: 위아래 왼쪽오른쪽 */
+            /* padding: 위아래 왼쪽오른쪽 */
+            /* margin : 30px 10px 40px (위 30px 좌우 10px 아래 40px) padding도 동일 */
+        }
+        p {
+            margin: 10px; padding: 10px;
+            width: 100px; height: 100px;
+            border: 10px solid black;
+            /* 테두리 설정 순서 : 두께 스타일 색상 */
+        }
+        p:first-of-type {
+            background: red;
+            box-sizing: content-box;
+            /* box-sizing을 따로 설정 안 할 경우의 기본. content 영역만 기준으로 두고 크기를 맞춤 */
+        }
+        p:last-of-type {
+            background: orange;
+            box-sizing: border-box;
+            /* 테두리를 기준으로 크기를 맞춘다는 뜻인데, content + padding + border 포함하게 됨.
+            실질적으로 사용할 수 있는 콘텐츠의 영역이 줄어들게 된다. */
+        }
+    </style>
+</head>
+<body>
+    <span>Dummy</span>
+    <div id="box">
+        <span>display 중</span>
+    </div>
+    <div id="box2">
+        <span>인라인과 인라인 블록의 차이</span>
+    </div>
+    <span>Dummy</span>
+    <p>1</p>
+    <p>2</p>
+</body>
+</html>

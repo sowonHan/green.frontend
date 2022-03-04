@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3월 4일 4차 메모</title>
+    <style>
+        .papa {
+            /* relative : 뷰포트를 기준으로 위치를 정한다. (상대 위치)
+            그 말은 화면 크기가 크든 작든 늘어나든 줄어들든 아래 지정한 top과 left는 각 뷰포트에 맞춰 동일하게 유지된다는 것.
+            부모 태그 여부는 상관 없다. */
+            /* absolute와 같이 쓰면 보통 껍데기로 쓴다. */
+            position: relative;
+            top: 100px;
+            left: 300px;
+            /* top right bottom left는 position이 있을 때만 사용 가능하다. (static은 디폴트라 불가능) */
+            width: 200px;
+            height: 100px;
+            background: salmon;
+        }
+        div.grand {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            top: 300px;
+            background: rgb(225, 174, 65);
+        } 
+
+        div.parent {
+            width: 400px;
+            height: 200px;
+            background: royalblue;
+        } 
+
+        div.child1 {
+        /* absolute : relative를 가진 부모 태그를 기준으로 위치를 정한다.
+            absolute 사용 시 부모 태그는 반드시 relative여야 한다.
+            경우에 따라서 부모 태그에 height를 작성해야만 아래 오는 block 태그가 정상적으로 쌓이기도 한다. */
+        /* 부모 태그가 relative가 없을 경우 relative를 찾아 계속 올라가서, 조부모 태그가 기준점이 된다.
+            하나도 없으면 html 태그가 부모가 되어, relative처럼 뷰포트를 기준으로 적용된다. */
+        /* 단독으로는 거의 안 씀 */
+            position: absolute;
+            top: 80px;
+            right: 150px;
+            width: 200px;
+            height: 100px;
+            background: salmon;
+        }
+
+        div.child2 {
+            position: absolute;
+            top: 80px;
+            right: 100px;
+            width: 200px;
+            height: 100px;
+            background: rgb(170, 245, 152);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="papa">
+    </div>
+
+    <div class="grand">
+        <div class="parent">
+            <div class="child1">1</div>
+            <div class="child2">2</div>
+        </div>
+    </div>
+
+</body>
+</html>
