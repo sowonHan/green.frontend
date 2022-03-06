@@ -4,9 +4,172 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <title>달콤팩토리</title>
+
     <style>
-        
+        body {
+            margin: 0;
+            
+        }
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        header {
+            position: relative;
+            height: 150px;
+        }
+        .head_logo {
+            width: 100%;
+            height: 150px;
+            float: left;
+            text-align: center;
+
+            background-image: url(logo.png);
+            background-size: 130px 130px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .top_menu {
+            list-style: none;
+            float: right;
+            position: absolute;
+            right: 30px;
+            top: -10px;
+        }
+        .top_detail {
+            float: left;
+            margin: 0 8px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        nav {
+            display: block;
+            width: 100%;
+            height: 60px;
+            margin: 0;
+        }
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+        }
+        .menu_detail {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 50px;
+        }
+        .main_image {
+            background-image: url(main2.jpg);
+            width: 100%;
+            height: 700px;
+            background-size: cover;
+        }
+        .new {
+            height: 400px;
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 50px;
+        }
+        .new_item {
+            background-image: url(new.jpg);
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 10px;
+            margin: auto;
+        }
+        .container {
+            margin: 130px auto 170px;
+            height: 400px;
+            position: relative;
+        }
+        .content {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            z-index: 10;
+        }
+        .content2 {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            z-index: 10;
+            text-align: right;
+        }
+        .image1 {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            width: 500px;
+            height: 350px;
+        }
+        .image2 {
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            width: 500px;
+            height: 350px;
+        }
+        .image3 {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            width: 700px;
+            height: 350px;
+        }
+        .title {
+            font-size: 35px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 15px;
+            border: 2px solid #ff8800;
+            color: #ff8800;
+        }
+        .button:hover {
+            background-color: #ff8800;
+            color: white;
+        }
+        footer {
+            background-color: #333330;
+            height: 130px;
+        }
+        .foot_logo {
+            background-image: url(logo_clear.png);
+            width: 130px;
+            height: 130px;
+            background-size: contain;
+            float: left;
+        }
+        .foot_info_1 {
+            color: aliceblue;
+            font-weight: 200;
+            font-size: 15px;
+            display: inline-block;
+            margin: 0;
+        }
+        .infobox {
+            padding-top: 30px;
+        }
+        h6 {
+            color: aliceblue;
+            font-weight: 200;
+            font-size: 15px;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -14,109 +177,171 @@
         <div class="head_logo"></div>
 
         <ul class="top_menu">
-            <li>로그인</li>
-            <li>회원가입</li>
-            <li>마이페이지</li>
-            <li>장바구니</li>
+            <li class="top_detail">
+                <a href="#">로그인</a>
+            </li>
+            <li class="top_detail">
+                <a href="#">회원가입</a>
+            </li>
+            <li class="top_detail">
+                <a href="#">마이페이지</a>
+            </li>
+            <li class="top_detail">
+                <a href="#">장바구니</a>
+            </li>
         </ul>
     </header>
     <nav>
         <ul class="menu">
-            <li>ABOUT US</li>
-
-            <li>
-                <h2>케이크</h2>
-                <ul>
-                    <li>클래식</li>
-                    <li>프리미엄</li>
-                    <li>시즌 상품</li>
-                </ul>
+            <li class="menu_detail">
+                <a href="#">ABOUT US</a>
             </li>
 
-            <li>
-                <h2>베이커리</h2>
-                <ul>
-                    <li>구움과자</li>
-                    <li>타르트</li>
-                    <li>선물 세트</li>
-                </ul>
+            <li class="menu_detail">
+                <a href="#">케이크</a>
+                <!-- <ul class="second_menu">
+                    <li>
+                        <a href="#">클래식</a>
+                    </li>
+                    <li>
+                        <a href="#">프리미엄</a>
+                    </li>
+                    <li>
+                        <a href="#">시즌 상품</a>
+                    </li>
+                </ul> -->
             </li>
 
-            <li>이벤트</li>
+            <li class="menu_detail">
+                <a href="#">베이커리</a>
+                <!-- <ul class="second_menu">
+                    <li>
+                        <a href="#">구움과자</a>
+                    </li>
+                    <li>
+                        <a href="#">타르트</a>
+                    </li>
+                    <li>
+                        <a href="#">선물 세트</a>
+                    </li>
+                </ul> -->
+            </li>
 
-            <li>
-                <h2>고객센터</h2>
-                <ul>
-                    <li>공지사항</li>
-                    <li>FQA</li>
-                    <li>매장 안내</li>
-                </ul>
+            <li class="menu_detail">
+                <a href="#">이벤트</a>
+            </li>
+
+            <li class="menu_detail">
+                <a href="#">고객센터</a>
+                <!-- <ul class="second_menu">
+                    <li>
+                        <a href="#">공지사항</a>
+                    </li>
+                    <li>
+                        <a href="#">FQA</a>
+                    </li>
+                    <li>
+                        <a href="#">매장 안내</a>
+                    </li>
+                </ul> -->
             </li>
         </ul>
     </nav>
     <section>
         <div class="main_image"></div>
 
-        <div class="recommend">
-            <h3>RECOMMNED YOU</h3>
-            <h1>달콤팩토리 인기 제품</h1>
-            <div>
-                <ul>
-                    <li>당근케이크</li>
-                    <li>구움과자 세트</li>
-                    <li>갸또 쇼콜라</li>
-                    <li>무화과 타르트</li>
-                </ul>
-            </div>
-        </div>
-
         <div class="new">
-            <h3>NEW ARRIVAL</h3>
-            <h1>따끈따끈 신제품</h1>
-            <div class="new_item">
-                <p>흑임자 갸또</p>
+            <h3 style="color:#4e4e44; margin-bottom: 5px;">NEW ARRIVAL</h3>
+            <h1 style="font-size: 33px; margin: 0 auto 20px;">따끈따끈 신제품!</h1>
+            <div class="new_item"></div>
+            <p style="margin-top: 12px;">
+                <a href="#">흑임자 갸또</a>
+            </p>
+        </div>
+
+        <div style="background-color: antiquewhite;" class="container">
+            <div class="content">
+                <h1 class="title">Cake</h1>
+            <h3 class="sub_title">정성이 필요한 순간,
+                <br>
+                달콤팩토리 케이크와 함께하세요.
+            </h3>
+            <p class="desc">
+                달콤팩토리 케이크는 엄선된 최고의 재료만을 사용합니다. 특히 신선한 1등급 우유로 만든 동물성 생크림을 사용하여 훨씬 부드럽고 깔끔한 맛을 느낄 수 있습니다.
+            </p>
+            <button class="button">케이크 전체 보기 ></button>
+            </div>
+            <div>
+                <img class="image1" src="cake.jpg" alt="초코크림 사진">
             </div>
         </div>
 
-        <div class="store">
-            <p>전국 오프라인 매장에서 달콤팩토리를 만나보세요!</p>
+        <div class="container">
+            <div class="content2">
+                <h1 class="title">베이커리</h1>
+            <h3 class="sub_title">갓 구운 구움과자
+                <br>
+                달콤팩토리만의 색다른 구움과자
+            </h3>
+            <p class="desc">
+                정성과 영양을 생각하지 않을 수 없습니다. 달콤팩토리 구움과자는 우리밀, 100% 원유 버터, 유기농 설탕, 유정란 및 우리 농산물을 부재료로 사용합니다.
+            </p>
+            <button class="button">베이커리 전체 보기 ></button>
+            </div>
+            <div>
+                <img class="image2" src="cookie.jpg" alt="마들렌 사진">
+            </div>
+        </div>
+
+        <div style="background-color: antiquewhite;" class="container">
+            <div class="content" style="margin-top: 100px;">
+                <p>
+                    전국 오프라인 매장에서 달콤팩토리를 만나보세요!
+                </p>
+                <button class="button">매장안내 보기 ></button>
+            </div>
+            <div>
+                <img class="image3" src="store.jpg" alt="매장 사진">
+            </div>
         </div>
     </section>
-    <footer class="foot">
+
+    <footer>
         <div class="foot_logo"></div>
-
-        <div class="foot_info_1">
-            <dl>
-                <dt>㈜달콤제과</dt>
-            </dl>
-            <dl>
-                <dt>대표</dt>
-                <dd>김과자</dd>
-            </dl>
-            <dl>
-                <dt>사업자등록번호</dt>
-                <dd>123-45-67890</dd>
-            </dl>
-            <dl>
-                <dt>통신판매업신고번호</dt>
-                <dd>제2022-인천미추홀구-0305호</dd>
-            </dl>
+        <div class="infobox">
+            <div>
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">㈜달콤제과</dt>
+                </dl>
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">대표</dt>
+                    <dt class="foot_info_1">김과자</dt>
+                </dl>
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">사업자등록번호</dt>
+                    <dt class="foot_info_1">123-45-67890</dt>
+                </dl>
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">통신판매업신고번호</dt>
+                    <dt class="foot_info_1">제2022-인천미추홀구-0305호</dt>
+                </dl>
+            </div>
+    
+            <div">
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">대표전화</dt>
+                    <dt class="foot_info_1">032-111-4444</dt>
+                </dl>
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">상담시간</dt>
+                    <dt class="foot_info_1">평일 10:00~5:00 (주말 및 공휴일 휴무)</dd>
+                </dl>
+                <dl class="foot_info_1">
+                    <dt class="foot_info_1">인천광역시 미추홀구 인하로119번길 20</dt>
+                </dl>
+            </div>
+            <h6>COPYRIGHT 달콤팩토리. All Rights Reserved.</h6>
         </div>
-
-        <div class="foot_info_2">
-            <dl>
-                <dt>대표전화</dt>
-                <dd>032-111-4444</dd>
-            </dl>
-            <dl>
-                <dt>상담시간</dt>
-                <dd>평일 10:00~5:00 (주말 및 공휴일 휴무)</dd>
-            </dl>
-            <dl>
-                <dt>인천광역시 미추홀구 인하로119번길 20</dt>
-            </dl>
-        </div>
-        <h5>COPYRIGHT 달콤팩토리. All Rights Reserved.</h5>
     </footer>
 </body>
 </html>
