@@ -4,14 +4,336 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+    <!-- link rel은 복사 안 해도 작업에 지장 없다. -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* 초기화 코드 */
+        * { margin: 0; padding: 0; }
+        body { font-family: 'Times New Roman', serif; }
+        li { list-style: none; }
+        a { text-decoration: none; }
+        img { border: 0; }
+
+        /* 헤더 */
+        #main_header {
+            /* 중앙정렬 */
+            width: 960px;
+            margin: 0 auto;
+            /* 좌표 */
+            position: relative;
+            /* 헤더 밑에 있는 애들의 정렬이 이상해질 수 있으므로 height를 준다. */
+            height: 160px;
+        }
+
+        #main_header > #title {
+            /* position은 위치를 섬세하게 조절할 때 쓰고 헤더에서 자주 쓰인다. */
+            position: absolute;
+            left: 20px;
+            top: 30px;
+        }
+
+        #main_header > #main_gnb {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #main_header > #main_lnb {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+        
+        /* 타이틀 */
+        #title {
+            font-family: 'Fredoka', serif;
+        }
+
+        /* gnb */
+        #main_gnb > ul {
+            overflow: hidden;
+        }
+        #main_gnb > ul > li {
+            float: left;
+        }
+        #main_gnb > ul > li > a {
+            /* block 속성을 주지 않으면 border가 제대로 적용이 안 된다. */
+            display: block;
+            padding: 2px 10px;
+            border: 1px solid black;
+        }
+        #main_gnb > ul > li > a:hover {
+            background: black;
+            color: white;
+        }
+        #main_gnb > ul > li:first-child > a {
+            border-radius: 10px 0 0 10px;
+            /* 좌측상단부터 시계방향 */
+        }
+        #main_gnb > ul > li:last-child > a {
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* lnb */
+        #main_lnb > ul {
+            overflow: hidden;
+        }
+        #main_lnb > ul > li {
+            float: left;
+        }
+        #main_lnb > ul > li > a {
+            display: block;
+            /* padding을 통해 중앙 정렬된 느낌을 줄 수 있다 */
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+        #main_lnb > ul > li > a:hover {
+            background: black;
+            color: white;
+        }
+        #main_lnb > ul > li:first-child > a {
+            border-radius: 10px 0 0 10px;
+        }
+        #main_lnb > ul > li:last-child > a {
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* 콘텐츠 */
+        #content {
+            /* 중앙정렬 */
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #content > #main_section {
+            width: 750px;
+            float: left;
+        }
+
+        #content > #main_aside {
+            width: 200px;
+            float: right;
+            /* 서로 정렬을 좌우로 했고 너비가 10픽셀이 남으므로
+            섹션과 사이드 사이에 10픽셀만큼의 간격이 있음 */
+        }
+
+        /* 본문 */
+        #main_section > article.main_article {
+            /* 붙어있으므로 article 태그이면서 main_article class인 것을 의미
+            (띄어 쓰면 후손 선택자가 됨) */
+            margin-bottom: 10px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        /* 사이드 */
+
+        /* 첫 번째 탭 */
+        input:nth-of-type(1) { display: none; }
+        input:nth-of-type(1) ~ div:nth-of-type(1) { display: none; }
+        input:nth-of-type(1):checked ~ div:nth-of-type(1) { display: block; }
+
+        /* 두 번째 탭 */
+        input:nth-of-type(2) { display: none; }
+        input:nth-of-type(2) ~ div:nth-of-type(2) { display: none; }
+        input:nth-of-type(2):checked ~ div:nth-of-type(2) { display: block; }
+
+        /* 탭 모양 */
+        section.buttons { overflow: hidden; }
+        section.buttons > label {
+            display: block;
+            float: left;
+
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+
+            box-sizing: border-box;
+            border: 1px solid black;
+
+            background: black;
+            color: white;
+        }
+
+        input:nth-of-type(1):checked ~ section.buttons > label:nth-of-type(1) {
+            background: white;
+            color: black;
+        }
+        input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2) {
+            background: white;
+            color: black;
+        }
+
+        /* 목록 */
+        .item {
+            overflow: hidden;
+            padding: 10px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .thumnail {
+            float: left;
+        }
+        .description {
+            float: left;
+            margin-left: 10px;
+        }
+        .description > strong {
+            /* strong 태그가 inline 속성이어서 변경해줌 */
+            display: block;
+            width: 120px;
+            /* 이 셋은 세트. 너비보다 긴 문장을 생략하고 ...으로 보여주는 것. */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 푸터 */
+        #main_footer {
+            width: 960px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <header></header>
-    <div>
-        <section></section>
-        <aside></aside>
+    <header id="main_header">
+        <div id="title">
+            <h1>Rint Development</h1>
+            <h2>HTML5 + CSS3 Basic</h2>
+        </div>
+        <nav id="main_gnb">
+            <!-- gnb는 글로벌메뉴. 가장 주가 되는 상위메뉴 -->
+            <ul>
+                <li><a href="#">Web</a></li>
+                <li><a href="#">Mobile</a></li>
+                <li><a href="#">Game</a></li>
+                <li><a href="#">Simulation</a></li>
+                <li><a href="#">Data</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <!-- lnb는 서브메뉴. 하위메뉴가 될 수도 있다. -->
+            <ul>
+                <li><a href="#">Html5</a></li>
+                <li><a href="#">Css3</a></li>
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">Jquery</a></li>
+                <li><a href="#">Node.js</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <section id="main_section">
+            <article class="main_article">
+                <h1>Main Article</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae quo temporibus aperiam ea magnam nulla! Nemo totam, aliquid hic provident fugiat dolores aliquam impedit quidem saepe eveniet similique reiciendis!</p>
+            </article>
+            <article class="main_article">
+                <h1>Main Article</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae quo temporibus aperiam ea magnam nulla! Nemo totam, aliquid hic provident fugiat dolores aliquam impedit quidem saepe eveniet similique reiciendis!</p>
+            </article>
+            <article class="main_article">
+                <h1>Main Article</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae quo temporibus aperiam ea magnam nulla! Nemo totam, aliquid hic provident fugiat dolores aliquam impedit quidem saepe eveniet similique reiciendis!</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+            <input id="first" type="radio" name="tab" checked="checked" />
+            <input id="second" type="radio" name="tab" />
+            <section class="buttons">
+                <label for="first">First</label>
+                <label for="second">Second</label>
+                <!-- 웹 접근성 때문에 input 있을 경우 반드시 붙여야하고 input의 id와 for이 같아야 한다. -->
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Canvas</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Video</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Semantic Web</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Transition</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Animation</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Border</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="https://via.placeholder.com/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Box</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+        </aside>
     </div>
-    <footer></footer>
+    <footer id="main_footer">
+        <h3>HTML5 + CSS3 Basic</h3>
+        <address>Website Layout Basic</address>
+    </footer>
 </body>
 </html>
