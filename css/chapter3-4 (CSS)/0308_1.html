@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3월 8일 1차 메모</title>
+
+    <style>
+        body {
+            width: 960px;
+            margin: 0 auto;
+            /* 반드시 width를 지정한 다음 margin 0 auto 해야 중앙 정렬이 된다. */
+        }
+        #aside {
+            width: 200px;
+            float: left;
+        }
+        #section {
+            width: 760px;
+            float: left;
+            /* 부모태그 사이즈에 맞춰서 float 시킬 태그를 나눠 계산해서 지정해야한다.
+            만약 761px 이 되어 aside와 section을 합친 너비가 body보다 커지면 section이 밑으로 내려가게 된다. */
+        }
+        #wrap {
+            overflow: hidden;
+            /* float 사용 시에는 부모 태그에 반드시 overflow: hidden을 줘야한다.
+            float 쓸 때 공식처럼 따라붙는 것.
+            그래야 그 밑에 쌓이는 블록들이 밑으로 내려간다. */
+        }
+        .box {
+            border: 3px solid black;
+            box-shadow: 10px 10px 10px black, 10px 10px 20px orange, 10px 10px 30px red; 
+            text-shadow: 10px 10px 10px black, 10px 10px 20px orange, 10px 10px 30px red; 
+            /* 쉼표를 사용해서 여러 개의 그림자를 만들 수 있다. */
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><h1>Header</h1></div>
+    <div id="navigation"><h1>Navigation</h1></div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>Aside</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed nisi velit. Phasellus suscipit pellentesque leo, vel efficitur mi placerat sed. Fusce vel condimentum leo, at iaculis ante. Suspendisse posuere, dolor non tempor ullamcorper, nisl elit facilisis erat, nec lacinia augue erat id lacus. Curabitur mollis, justo nec lobortis hendrerit, libero nunc aliquam lacus, ut tristique sem nunc eu metus. Quisque varius orci eu felis sollicitudin malesuada. Vivamus pretium ligula velit, eget facilisis enim imperdiet ac.</p>
+        </div>
+        <div id="section">
+            <h1>Section</h1>
+            <p>Nam enim sem, pulvinar sed nibh non, vestibulum suscipit dui. Vestibulum vitae sodales velit. Nam cursus, velit id semper malesuada, sem mauris iaculis diam, sit amet auctor ligula lectus in eros. Aliquam tincidunt semper odio, sit amet ornare neque tristique ut. Suspendisse placerat consequat lectus ut varius. Aliquam in ligula non massa auctor porta. Proin auctor mattis elit sit amet tincidunt. Cras auctor mauris augue, et volutpat diam iaculis vitae.</p>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Lorem ipsum dolor amet</h1>
+    </div>
+    <div id="footer"><h1>Footer</h1></div>
+</body>
+</html>

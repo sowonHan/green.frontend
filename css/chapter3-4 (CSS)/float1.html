@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>float 응용 실습1</title>
+
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            border: 5px solid aquamarine;
+            height: 50px;
+        }
+        nav {
+            border: 5px solid bisque;
+            height: 50px;
+        }
+        .container {
+            overflow: hidden;
+        }
+        
+        section {
+            border: 5px solid red;
+            width: 690px;
+            float: right;
+        }
+        aside {
+            border: 5px solid slateblue;
+            width: 290px;
+            float: right;
+        }
+        footer {
+            border: 5px solid violet;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>navigation</nav>
+    <div class="container">
+        <aside>aside. Lorem ipsum, dolor sit amet consectetur adipisicing elit</aside>
+        <section>section. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, odit et minima voluptate inventore aliquid, illum, eligendi aut quo voluptatem nulla quibusdam! Harum dolor nesciunt, eaque minus consequuntur reprehenderit possimus!</section>
+    </div>
+    <footer>footer. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, voluptas libero dicta optio iure omnis unde sapiente ab deleniti mollitia pariatur iusto doloribus atque ullam odit qui harum officiis rerum.</footer>
+</body>
+</html>
