@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        /* 전체적으로 여백을 없애줘야 틈새가 안 생긴다. */
+            margin: 0;
+            padding: 0;
+    }
+
+    #wrap {
+            width: 960px;
+            height: 500px;
+            background: skyblue;
+            margin: 0 auto;
+    }
+
+    #wrap div {
+            width: 300px;
+            height: 100%;
+            background: salmon;
+    }
+
+    @media screen and (max-width: 959px) {
+        #wrap {
+            width: 100%;
+        }
+
+        #wrap div {
+            /* (자식박스 가로 너비 ÷ 부모박스 가로 너비) x 100 = 결과값(%)*/
+            /* 실무에서는 미리 사이즈를 정해놓지 않는 경우도 있어서 이 공식을 안 쓰고 그냥 눈대중으로 비율 맞추기도 한다. */
+            width: 31.25%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+    </div>
+</body>
+</html>

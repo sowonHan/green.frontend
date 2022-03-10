@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 자바스크립트는 큰 따옴표, 작은 따옴표 구분 안 한다.
+        대소문자는 구분하기 때문에 조심해야 한다. */
+        /* alt + shift + a는 여러 줄로 주석 처리할 때 단축키 사용하면 된다. */
+        
+        // 웹페이지에 입력
+        document.write("<h1>안녕하세요!</h1>");
+        // 개발자도구 콘솔창에 입력
+        console.log("로그입니다~~");
+
+        // 변수(variable). 변하는 수
+        // 변수를 정의하면 컴퓨터가 메모리에 변수 num이라는 공간을 만들고 그 값 1을 넣는다.
+
+        // 문자형
+        var name = "소원";
+        
+        // 숫자형
+        var num = 1;
+        
+        // 논리형
+        var flag = false;
+
+        // 빈 데이터형
+        var undef = undefined;
+        // var undef; 이렇게만 적어도 똑같음.
+        
+        // 변수만 먼저 잡아주고 나중에 값을 만들어도 된다.
+        var song;
+        song = "노래";
+
+        // 값을 재정의
+        num = 2;
+
+        // typeof : 어떤 자료형인지 알려준다.
+        console.log(typeof name);
+        console.log(name);
+        document.write(num);
+        console.log(flag);
+        console.log(undef);
+    </script>
+</body>
+</html>

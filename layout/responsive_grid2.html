@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 960px;
+            height: 500px;
+            background: skyblue;
+            margin: 0 auto;
+        }
+
+        #wrap div {
+            width: 300px;
+            height: 100%;
+            /* div가 수평으로 정렬되게 하기 위해 display 바꿈 */
+            display: inline-block;
+        }
+
+        #wrap div:first-child {
+            /* margin에도 비율을 주기 위해 이렇게 설정 */
+            margin-right: 200px;
+            background: salmon;
+        }
+
+        #wrap div:nth-child(2) {
+            background: teal;
+        }
+
+        @media screen and (max-width: 959px) {
+            #wrap {
+                width: 100%;
+            }
+
+            #wrap div:first-child {
+                /* 200px ÷ 960px */
+                /* margin도 하나의 블록이라고 생각하고 똑같이 해주면 됨 */
+                margin-right: 20.83%;
+            }
+
+            #wrap div {
+                width: 31.25%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
