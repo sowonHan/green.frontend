@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/* 초기화 */
+
+* {
+    margin: 0; padding: 0;
+    font-family: Arial, 'san-serif';
+    /* box-sizing을 초기화로 해놔야 사이즈 계산을 덜한다 */
+    box-sizing: border-box;
+}
+a { text-decoration: none !important; }
+img { border: 0; }
+ul { list-style: none; }
+
+/* 헤더 */
+
+#main_header {
+    height: 390px;
+    background: gray;
+    color: white;
+}
+
+#main_header a {
+    color: white;
+}
+
+#main_header > .gnb_container {
+    background: black;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    border-bottom: 1px solid #2b2b2b;
+}
+
+#main_header .gnb {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+}
+
+#main_header .logo {
+    float: left;
+    width: 190px;
+    margin-top: 12px;
+}
+
+#main_header ul.nav {
+    float: left;
+    overflow: hidden;
+    width: calc(100% - 213px);
+    padding: 0 60px;
+}
+
+#main_header ul.nav > li {
+    float: left;
+    padding: 18px 17px;
+    width: 33.33%;
+    text-align: center;
+}
+
+#main_header ul.nav > li > .lnb {
+    padding: 27px 0;
+    background: black;
+    height: 167px;
+    display: none;
+}
+
+#main_header ul.nav > li:hover > .lnb {
+    display: block;
+}
+
+#main_header ul.nav > li:hover > .lnb > li {
+    padding: 3px;
+}
+
+#main_header .setting {
+    float: right;
+    width: 23px;
+    text-align: right;
+    padding-top: 12px;
+}
+
+#main_header .trigger {
+    float: right;
+    width: 23px;
+    text-align: right;
+    padding-top: 4px;
+    display: none;
+}
+
+#main_header .trigger .close {
+    display: none;
+}
+
+/* Fade in 애니메이션 */
+.appear {
+    /* fade-in은 js 변수처럼 이름을 임의로 지정해주는 것 */
+    animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
