@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 이미지</title>
+    <style>
+        .img1 { 
+            /* 늘리는 대로 늘어남 */
+            width: 100%; 
+            height: auto;
+        }
+        .img2 {
+            /* 줄어들 수는 있지만 원본 사이즈가 되면 그 이상 늘어나지 않음 */
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="lime.jpg" class="img1">
+    <img src="lime.jpg" class="img2">
+</body>
+</html>

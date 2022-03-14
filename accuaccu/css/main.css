@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url('./common.css');
 
 /* 메인 콘텐츠 */
 #main_content {
@@ -7,12 +6,115 @@
 }
 
 #main_content > div {
-    width: 960px; 
+    width: 960px;
     margin: 0 auto;
     overflow: hidden;
     padding: 15px 0;
 }
 
-#main_content > #main_top div {
-    text-align: center;
+#main_content > #main_container > section {
+    float: left;
+    width: 730px;
 }
+
+#main_content > #main_container > section > article {
+    width: 90%;
+}
+
+#main_content > #main_container > section > #weather_map {
+    height: 400px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+#main_content > #main_container > section > #weather_map > #map {
+    width: 90%;
+    height: 360px;
+    /* 카카오맵 기본 설정 때문에 사이트로 가져올 때 꼬일 수 있으므로 지도 index를 강제로 지정해주는 것 */
+    z-index: 0 !important;
+    margin: 0 auto;
+}
+
+#main_content > #main_container > section > #weather_location {
+    height: 400px;
+    margin-bottom: 20px;
+    background: #D8D8D8;
+}
+
+#main_content > #main_container > section > #weather_location a {
+    display: inline-block;
+    height: 51px;
+    /* 767px 모바일 화면이 되기 이전의 모습. 한 줄에 2개씩 나오니까 50%씩 */
+    /* 8px는 각 칸의 좌우 margin 2px들 4개의 합 */
+    width: calc(50% - 8px);
+    background: white;
+    margin: 2px;
+    line-height: 51px;
+}
+
+#main_content > #main_container > section > #weather_location a span {
+    display: inline-block;
+    font-size: 18px;
+}
+
+#main_content > #main_container > section > #weather_location a span:nth-child(1) {
+    width: 60%;
+}
+#main_content > #main_container > section > #weather_location a span:nth-child(2) {
+    width: 20%;
+}
+#main_content > #main_container > section > #weather_location a span:nth-child(3) {
+    width: 15%;
+}
+
+#main_content > #main_container > section > #weather_location a img {
+    width: 30px;
+    height: 30px;
+}
+
+#main_content > #main_container > section > #weather_add {
+    height: 50px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+#main_content > #main_container > aside {
+    float: right;
+    width: 210px;
+}
+
+@media screen and (max-width: 767px) {
+    #main_content > div {
+        width: 100%;
+    }
+
+    #main_content > #main_container > section {
+        width: 100%;
+    }
+
+    #main_content > #main_container > section > article {
+        width: 100%;
+    }
+
+    #main_content > #main_container > section > #weather_location a {
+        width: 100%;
+    }
+
+    #main_content > #main_container > aside {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #main_content > div {
+        width: 100%;
+    }
+    #main_content > #main_container > section {
+        /* 광고 영역 210 빼주고 나머지는 줄어들도록 */
+        width: calc(100% - 210px);
+    }
+}
+
+@media screen and (min-width: 1024px) {}

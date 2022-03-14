@@ -18,6 +18,8 @@ ul { list-style: none; }
     height: 390px;
     background: gray;
     color: white;
+    background: url('../img/1024x450.jpg');
+    background-size: cover;
 }
 
 #main_header a {
@@ -107,4 +109,87 @@ ul { list-style: none; }
     to {
         opacity: 1;
     }
+}
+
+#main_footer {
+    height: 150px;
+}
+
+#main_footer > div:nth-child(1) {
+    background: white;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#main_footer > div:nth-child(2) {
+    background: white;
+    height: 100px;
+    padding-top: 30px;
+}
+
+#main_footer > div:nth-child(2) > div {
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+
+/* 미디어 쿼리. 이렇게 3개가 디폴트 사이즈 */
+/* 주의점 : 미디어 쿼리는 반드시 기본 설정보다 아래에 작성해야 한다. 캐스케이딩 특성상 그보다 위에 작성하면 적용 안 됨 */
+@media screen and (max-width: 767px) {
+    #main_header {
+        background: url('../img/425x450.jpg');
+        background-size: cover;
+    }
+
+    #main_header .gnb {
+        width: 90vw;
+    }
+
+    #main_header ul.nav {
+        display: none;
+    }
+
+    #main_header .setting {
+        display: none;
+    }
+
+    #main_header .trigger {
+        display: block;
+    }
+
+    #main_footer > div:nth-child(2) > div {
+        font-size: 11px;
+        text-align: left;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #main_header {
+        background: url('../img/768x450.jpg');
+        background-size: cover;
+    }
+
+    #main_header .gnb {
+        /* vw (viewport width) : 뷰포트에서 90%만큼 보여주겠다 */
+        /* %는 부모태그를 기준으로 90%만큼 보여주는 것이라, 부모태그가 100%면 동일한 결과가 나온다. */
+        /* 반응형에서 vw, vh는 자주 쓰인다!! */
+        width: 90vw;
+    }
+
+    #main_header ul.nav {
+        padding: 0 30px;
+    }
+
+    #main_footer > div:nth-child(2) > div {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
 }
