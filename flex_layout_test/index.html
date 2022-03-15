@@ -26,33 +26,46 @@
 
         .header__nav {
             display: flex;
-            background: peachpuff;
+            flex-wrap: nowrap;
+            height: 58px;
+            background: blue;
         }
 
         .header__nav > h1 {
-            width: 50px;
-            height: 58px;
+            width: 65px;
+            height: 50px;
             background: lavender;
         }
 
         .header__nav > nav {
-            width: calc(50% - 50px);
+            width: calc(75% - 65px);
             background: #bfbff3;
-            
         }
 
         .header__nav > nav > ul {
             display: flex;
-            justify-content: space-around;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            /* 왜 height를 줘야 align-items가 되지??? */
+            height: 58px;
+            align-items: center;
         }
 
-        .header__nav > .header__link {
+        .header__nav > nav > ul > li {
+            background: wheat;
+        }
+
+        .header__link {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 25%;
+            justify-content: space-around;
             background: olive;
-            width: 50%
+            align-items: center;
         }
 
         .header__link > div {
-            display: flex;
+            background: wheat;
         }
 
         .video {
