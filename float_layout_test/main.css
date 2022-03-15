@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/* 콘텐츠 */
+
+#main_content {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#main_content > section {
+    margin: 30px auto;
+    width: 100%;
+}
+
+#magazine {
+    background: greenyellow;
+    overflow: hidden;
+    height: 600px;
+    text-align: center;
+}
+
+#magazine > div {
+    float: left;
+    height: 500px;
+    padding: 20px 4px;
+    width: 33.33%;
+    background: lightgray;
+    margin-top: 20px;
+    
+}
+
+#story {
+    background: lightcoral;
+    overflow: hidden;
+    height: 600px;
+    text-align: center;
+}
+
+#story > div {
+    float: left;
+    height: 250px;
+    width: 50%;
+    background: lightgray;
+    padding: 20px 4px;
+    margin-top: 20px;
+    
+}
+
+#promotion {
+    background: lightblue;
+    overflow: hidden;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#promotion > div {
+    float: left;
+    height: 300px;
+    width: 25%;
+    background: lightgray;
+    margin-top: 20px;
+    
+    padding: 20px 4px;
+}
+
+#product {
+    background: lightseagreen;
+    overflow: hidden;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#product > div {
+    float: left;
+    height: 250px;
+    width: 20%;
+    background: lightgray;
+    margin-top: 20px;
+    padding: 20px 4px;
+}
+
+#sns {
+    background: lightsalmon;
+    text-align: center;
+    height: 400px;
+    overflow: hidden;
+}
+
+#sns > article > div {
+    float: left;
+    width: 16.66%;
+    background: lightgray;
+    height: 250px;
+    margin-top: 20px;
+    padding: 20px 4px;
+}
+
+#notice {
+    width: 100%;
+    height: 100px;
+    background: #a07ca1;
+    overflow: hidden;
+}
+
+#notice > div {
+    float: left;
+    width: 33.33%;
+    height: 100px;
+}
+
+@media screen and (max-width: 767px) {
+    #main_content {
+        width: 100%;
+    }
+
+    #notice {
+        height: 300px;
+    }
+
+    #notice > div {
+        float: none;
+    }
+
+    #story {
+        height: 1150px;
+    }
+
+    #story > div {
+        float: none;
+        width: 100%;
+    }
+
+    #sns {
+        height: 600px;
+    }
+
+    #sns > article > div {
+        width: 33.33%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1290px) {
+    #main_content {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 1291px) {}

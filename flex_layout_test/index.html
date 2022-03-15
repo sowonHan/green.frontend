@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SK</title>
+
+    <style>
+        /* 초기화 */
+        * {margin: 0; padding: 0;}
+        ul {list-style: none;}
+        
+        header, footer, main {
+            box-sizing: border-box;
+        }
+
+        /* 디폴트 PC사이즈 */
+
+        /* 헤더 */
+        .header {
+            height: 58px;
+            
+        }
+
+        .header__nav {
+            display: flex;
+            background: peachpuff;
+        }
+
+        .header__nav > h1 {
+            width: 50px;
+            height: 58px;
+            background: lavender;
+        }
+
+        .header__nav > nav {
+            width: calc(50% - 50px);
+            background: #bfbff3;
+            
+        }
+
+        .header__nav > nav > ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .header__nav > .header__link {
+            background: olive;
+            width: 50%
+        }
+
+        .header__link > div {
+            display: flex;
+        }
+
+        .video {
+            height: 1050px;
+            background: teal;
+        }
+
+        .gateway {
+            height: 625px;
+            background: antiquewhite;
+        }
+
+        .highlight {
+            height: 450px;
+            background: indianred;
+        }
+
+        .footer {
+            height: 140px;
+            background: #444444;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__nav">
+            <h1>SK</h1>
+            <nav>
+                <ul>
+                    <li>SK 소개</li>
+                    <li>MEDIA센터</li>
+                    <li>사회적 가치</li>
+                    <li>채용</li>
+                </ul>
+            </nav>
+            <div class="header__link">
+                <div class="search">1</div>
+                <div class="sns">2</div>
+                <div class="langauge">3</div>
+                <div class="quick">4</div>
+            </div>
+        </div>
+    </header>
+    <main class="wrap">
+        <section class="video">
+            <div class="video__content"></div>
+        </section>
+        <section class="gateway">
+            <div class="gateway__content">
+                <div class="content__news">SK뉴스 바로가기</div>
+                <div class="content__aff">계열사 바로가기</div>
+                <div class="content__recruit">채용 바로가기</div>
+            </div>
+        </section>
+        <section class="highlight">
+            <div class="highlight__content">
+                <div class="content__area1">1</div>
+                <div class="content__area2">2</div>
+                <div class="content__area3">3</div>
+                <div class="content__area4">4</div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</body>
+</html>

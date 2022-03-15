@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* 초기화 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 헤더 */
+
+#main_header {
+    background: gray;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#main_header > nav {
+    background: darkblue;
+    float: left;
+    color: white;
+    width: 100%;
+    height: 100px;
+}
+
+#main_header > nav > #menu_one {
+    float: left;
+    width: 40%;
+}
+
+#main_header > nav > #menu_two {
+    float: right;
+    width: 40%;
+}
+
+#main_header > nav > #menu_two > ul {
+    float: right;
+}
+
+
+#main_header > nav > #logo {
+    float: left;
+    width: 20%;
+}
+
+#main_header > nav > div li {
+    float: left;
+    padding: 0 10px;
+}
+
+#logo {
+    font-size: 30px;
+}
+
+#main_header > #main_promo {
+    overflow: hidden;
+    width: 100%;
+}
+
+#main_header > #main_promo > div {
+    float: left;
+    width: 33.33%;
+    height: 600px;
+}
+
+#main_header > #main_promo > div:nth-child(1) {
+    background: #ffebda;
+}
+#main_header > #main_promo > div:nth-child(2) {
+    background: #ffff7c;
+}
+#main_header > #main_promo > div:nth-child(3) {
+    background: palevioletred;
+}
+
+/* 푸터 */
+
+footer {
+    width: 100%;
+    height: 450px;
+    background: #3b3b3f;
+    color: white;
+}
+
+@media screen and (max-width: 767px) {
+    #menu_one, #menu_two {
+        display: none;
+    }
+
+    #main_header > nav > #logo {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1290px) {
+    nav li {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 1291px) {
+    
+}
