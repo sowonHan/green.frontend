@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자2</title>
+</head>
+<body>
+    <h2>논리 연산자</h2>
+    <!-- &&는 AND
+        ||는 OR
+        !는 NOT-->
+    <script>
+        var a = 10;
+        var b = 20;
+        var m = 30;
+        var n = 40;
+
+        var result;
+        // ||는 하나라도 true가 있으면 true다.
+        result = a > b || b >= m || m > n;     // false || false || false 
+        document.write(result, "<br />");  // false
+
+        result = a > b || b >= m || m <= n;   // false || false || true
+        document.write(result, "<br />"); // true
+
+        // &&는 하나라도 false가 있으면 false다.
+        result = a <= b && b >= m && m <= n; // true && false && true
+         document.write(result, "<br />"); // false
+
+        result = a <= b && b <= m && m <= n; // true && true && true
+        document.write(result, "<br />"); // true
+
+        // !는 반대로 바꿔주는 것
+        result = !(a > b);  // !false
+        document.write(result, "<br />"); // true
+    </script>
+
+    <h2>삼항 조건 연산자</h2>
+    <script>
+        // 공식 -> 조건식 ? 코드1 : 코드2
+        // 조건식이 true면 코드1이 출력, false면 코드2가 출력한다는 뜻
+        let c = 10;
+        let d = 3;
+
+        var res = c > d ? "js" : "hello";
+        document.write(res);
+
+    </script>
+</body>
+</html>

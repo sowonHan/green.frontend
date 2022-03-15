@@ -1,7 +1,9 @@
 @charset "UTF-8";
+/* CSS 파일에 기본으로 들어가는 문구. */
 
-/* 초기화 */
+/* 사이트에 기본적으로 항상 보이는 헤더와 푸터를 여기에 설정 */
 
+/* 초기화 코드 */
 * {
     margin: 0; padding: 0;
     font-family: Arial, 'san-serif';
@@ -13,7 +15,6 @@ img { border: 0; }
 ul { list-style: none; }
 
 /* 헤더 */
-
 #main_header {
     height: 390px;
     background: gray;
@@ -31,7 +32,9 @@ ul { list-style: none; }
     height: 60px;
     width: 100%;
     position: fixed;
+    /* fixed 할 때는 width를 100%로 줘야 전체 가로로 나온다 */
     z-index: 1;
+    /* 기본이 0이니까 1을 주면 맨 앞으로 온다 */
     border-bottom: 1px solid #2b2b2b;
 }
 
@@ -42,17 +45,18 @@ ul { list-style: none; }
     width: 960px;
 }
 
-#main_header .logo {
+#main_header .gnb .logo {
     float: left;
     width: 190px;
     margin-top: 12px;
 }
 
-#main_header ul.nav {
+#main_header .gnb ul.nav {
     float: left;
     overflow: hidden;
-    width: calc(100% - 213px);
     padding: 0 60px;
+    width: calc(100% - 217px);
+    /* 로고와 세팅 이미지 너비의 합이 217. 고정시키고 싶은 둘만 제외하고 나머지는 반응형으로 비율을 늘렸다 줄였다 할 수 있다 */
 }
 
 #main_header ul.nav > li {

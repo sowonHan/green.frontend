@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 문제풀이2</title>
+</head>
+<body>
+    <script>
+        let one = 1200;
+        let two = 1300;
+        let three = 1000;
+
+        const four = prompt("4분기 판매량은?", "0");
+
+        let aver = (one + two + three) / 3;
+        let result = four >= aver ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다."
+
+        // document.write(aver, '<br>');
+        document.write(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 문제풀이3</title>
+</head>
+<body>
+    <script>
+        let name = prompt("당신의 이름은?" , "");
+        let height = prompt("당신의 신장은?" , "0");
+        let weight = prompt("당신의 몸무게는?" , "0");
+
+        let aver_weight = (height - 100) * 0.9;
+        
+        let result = (weight >= aver_weight - 5) && (weight <= aver_weight + 5) ? "적정 체중입니다" : "적정 체중이 아닙니다."
+
+        let t = "<table border='1' style='font-weight: 600'>";
+        t += "<tr>";
+        t += "<td>이름</td><td>신장</td><td>몸무게</td><td>평균체중</td><td>결과</td>"
+        t += "</tr>";
+        t += "<tr>";
+        t += "<td>" + name + "</td>";
+        t += "<td>" + height + "</td>";
+        t += "<td>" + weight + "</td>";
+        t += "<td>" + aver_weight + "</td>";
+        t += "<td>" + result + "</td>";
+        // t += "<td>" + name + "</td><td>" + height + "</td><td>" + weight + "</td><td>" + aver_weight + "</td><td>" + result + "</td>";
+        // 이것도 되네 처음에 맞게 했는데 로직 순서를 정의부터 안 내리고 테이블부터 정의하는 바람에 출력이 안 됐던 모양!
+        t += "</tr>";
+        t += "</table>";
+        
+        document.write(t);
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자1</title>
+</head>
+<body>
+    <h1>연산자</h1>
+
+    <!-- 쉼표를 쓰면 한 번에 여러 개를 정의할 수 있다!!!!
+    더하기는 +, 빼기는 -, 곱하기는 *, 나누기는 / 사용. 나눴을 때 나머지를 구하는 건 % -->
+
+    <h2>문자 결합 연산자</h2>
+    <script>
+        let name = '소원';
+        let str = '입니다';
+        let str2 = ' 짠!'
+        let num = 100;
+        let num2 = 200;
+        let res = name + num + num2 + str + str2;
+        // 몇 개든 합칠 수 있다. 다만 공백은 문자에서 아무리 공백을 만들어도 한 칸만 인식.
+        // 하나라도 문자열이 껴서 결합되면 숫자도 문자형으로 바뀐다.
+
+        document.write(res);
+    </script>
+
+    <h2>대입 연산자</h2>
+    <script>
+        let num3 = 10;
+        let num4 = 3;
+
+        // 더한 값을 다시 num3의 값으로 정의하게 되는 것.
+        num3 = num3 + num4;
+        // num3 += num4; 로 줄여서 쓸 수 있다.
+        // num3 -= num4;
+        // num3 *= num4;
+        // num3 /= num4;
+        // num3 %= num4; 다 줄여서 쓸 수 있다.
+
+        document.write(num3);
+
+        // 대입 연산자 응용. 요즘은 잘 안 쓰지만 알아두기!
+        var str3 = "<table border='1'>";
+        str3 += "<tr>";
+        str3 += "<td>1</td><td>2</td><td>3</td>";
+        str3 += "</tr>";
+        str3 += "</table>";
+        document.write( str3 );
+        console.log(str3);
+    </script>
+
+    <h2>증감 연산자</h2>
+    <script>
+        let num5 = 10;
+        let num6 = 20;
+        let result;
+
+        // 이게 증감 연산자. 2개씩 붙여서 쓰며 ++과 --만 쓸 수 있다.
+        // 하나씩 감소
+        num5--;
+        // 위는 앞에 변수가 와서 전위연산자. 대입하고 증가한다
+        // --num5; 는 후위연산자. 증가하고 대입시킨다.
+        document.write(num5 + "<br />");
+
+        num5++;
+        document.write(num5 + "<br />");
+
+        result = num6++;
+        document.write(result + '<br />');
+        // 전위연산자 num6++으로 입력하면 result에 num6을 대입시킨 뒤 증가를 하기 때문에 result는 그대로 20으로 보인 채 출력이 된 다음 증가가 된다.
+
+        result = ++num6;
+        document.write(result + '<br />');
+    </script>
+
+    <h2>비교 연산자</h2>
+    <!-- 부등호. >(초과) <(미만) >=(이상) <=(이하) ==(같다) !=(같지 않다)
+        ===(같다) !==(같지 않다)
+    if문이랑 삼항연산자에서 많이 쓰게 된다.-->
+    <script>
+        let num7 = 10;
+        let num8 = 20;
+        let num9 = "10";
+
+        document.write(num7 != num8);
+        // 비교 연산자의 결과값은 항상 true 혹은 false
+
+        document.write((num7 == 10) + '<br />')
+
+        document.write((num9 == 10) + '<br />')
+        document.write((num9 === 10) + '<br />')
+        // 얘네는 자료형까지 비교를 해준다.
+
+    </script>
+</body>
+</html>
