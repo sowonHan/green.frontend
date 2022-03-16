@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <script>
+        let p = 1;
+
+        // false일 때까지 반복해서 실행한다. false가 되면 더 이상 실행하지 않는다.
+        while (p <= 10) {
+            document.write("안녕하세요~", p, "<br />");
+            p++;
+            // i++가 위에 있냐 아래에 있냐에 따라 결과값 달라짐
+        }
+
+        let o = 1;
+        // do는 실행하라는 것. while은 판단한 후 실행, do while은 실행한 후 판단.
+        do {
+            document.write('Hello! <br />');
+            o++;
+        } while (o < 3)
+
+        // for (초깃값; 조건식; 증감식) while문보다 조금 더 간결하게 할 수 있다
+        for (var i=1; i<=10; i++) {
+            if (i == 6) break;
+            /* i가 6이면 반복문을 멈추라는 뜻. 멈추는 순간 밑의 실행코드도 실행 안 하고 끝난다.
+            그래서 이게 실행코드 위에 있으면 반복5까지 나오고, 실행코드 밑에 있으면 반복6까지 나온다. */
+            document.write('반복', i, '<br />');
+        }
+    </script>
+</body>
+</html>

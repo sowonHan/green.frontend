@@ -4,90 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../accueweater (float+responsive)/library/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./all.css">
 
-    <title>SK</title>
+    <title>SK 그룹</title>
 
-    <style>
-        /* 초기화 */
-        * {margin: 0; padding: 0;}
-        ul {list-style: none;}
-        
-        header, footer, main {
-            box-sizing: border-box;
-        }
-
-        /* 디폴트 PC사이즈 */
-
-        /* 헤더 */
-        .header {
-            height: 58px;
-            
-        }
-
-        .header__nav {
-            display: flex;
-            flex-wrap: nowrap;
-            height: 58px;
-            background: blue;
-        }
-
-        .header__nav > h1 {
-            width: 65px;
-            height: 50px;
-            background: lavender;
-        }
-
-        .header__nav > nav {
-            width: calc(75% - 65px);
-            background: #bfbff3;
-        }
-
-        .header__nav > nav > ul {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            /* 왜 height를 줘야 align-items가 되지??? */
-            height: 58px;
-            align-items: center;
-        }
-
-        .header__nav > nav > ul > li {
-            background: wheat;
-        }
-
-        .header__link {
-            display: flex;
-            flex-wrap: nowrap;
-            width: 25%;
-            justify-content: space-around;
-            background: olive;
-            align-items: center;
-        }
-
-        .header__link > div {
-            background: wheat;
-        }
-
-        .video {
-            height: 1050px;
-            background: teal;
-        }
-
-        .gateway {
-            height: 625px;
-            background: antiquewhite;
-        }
-
-        .highlight {
-            height: 450px;
-            background: indianred;
-        }
-
-        .footer {
-            height: 140px;
-            background: #444444;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -102,10 +23,22 @@
                 </ul>
             </nav>
             <div class="header__link">
-                <div class="search">1</div>
-                <div class="sns">2</div>
-                <div class="langauge">3</div>
-                <div class="quick">4</div>
+                <div class="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="sns">
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-solid fa-b"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-neos"></i>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="langauge">
+                    KOR
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="quick" style="background: red;">
+                    QUICK LINK
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -114,14 +47,16 @@
             <div class="video__content"></div>
         </section>
         <section class="gateway">
-            <div class="gateway__content">
+            <h1 class="con">SK GATEWAY</h1>
+            <div class="gateway__content con">
                 <div class="content__news">SK뉴스 바로가기</div>
                 <div class="content__aff">계열사 바로가기</div>
                 <div class="content__recruit">채용 바로가기</div>
             </div>
         </section>
         <section class="highlight">
-            <div class="highlight__content">
+            <h1 class="con">SK HIGHLIGHT</h1>
+            <div class="highlight__content con">
                 <div class="content__area1">1</div>
                 <div class="content__area2">2</div>
                 <div class="content__area3">3</div>
@@ -129,6 +64,16 @@
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div class="logo">Logo</div>
+        <div class="info">
+            <article>SK윤리경영 상담/제보</article>
+            <article class="only_mobile">
+                서울특별시 종로구 종로 26
+                <span>COPYRIGHT (C) BY SK INC. ALL RIGHT RESERVED</span>
+            </article>
+        </div>
+        <div class="logo2">logo2</div>
+    </footer>
 </body>
 </html>
