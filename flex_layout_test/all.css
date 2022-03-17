@@ -12,47 +12,53 @@ header, footer, main {
 
 /* 헤더 */
 /* 메뉴바 집에 가서 다시 만지기! */
-.header__nav {
-    display: flex;
-    height: 58px;
-    background: blue;
-    align-items: center;
-}
 
-.header__nav > h1 {
-    width: 65px;
-    background: orange;
+
+.header__nav {
+    background: blue;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
 }
 
+.header__nav > h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: sandybrown;
+}
+
 .header__nav > nav {
-    width: calc(100% - 432px);
-    background: #bfbff3;
-    height: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 
 .header__nav > nav > ul {
-    display: flex;
-    justify-content: space-evenly;
-    height: 100%;
-    align-items: center;
+    display: inline-block;
 }
 
 .header__nav > nav > ul > li {
     background: wheat;
+    display: inline-block;
+    padding: 10px 0 14px;
 }
 
 .header__link {
-    display: flex;
-    /* justify-content: flex-end; */
-    /* flex: 1 1 382px; */
-    /* height: 100%; */
-    /* align-items: center; */
+    
+    position: relative;
+    display: inline-block;
+    text-align: center;
 }
 
 .header__link > div {
-    background: wheat;
-    padding: 15px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .search, .sns, .langauge {
