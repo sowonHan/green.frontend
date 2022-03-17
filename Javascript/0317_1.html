@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3월 17일 1차 메모 (반복문)</title>
+</head>
+<body>
+    <script>
+        // continue를 만나면 밑에 있는 코드를 실행하지 않고 다시 위로 올라간다
+        for(var i = 1; i <= 10; i++){
+            if( i % 2 == 0 ) continue;
+            document.write(i, "<br>");
+        }
+
+        for(var o = 1; o <= 3; o++){
+            /* k for문은 o가 1인 상태로 2까지 반복하고 k가 3이 되면 조건에 안 맞아 끝나면서 document.write("<br>")가 실행. 
+            그 다음 o for문이 다시 반복되어 이제 o가 2가 되고 k for문은 처음 1부터 다시 반복하게 된다. */
+		    for(var k = 1; k <= 2; k++){
+			    document.write(o + "행" + k + "열");
+		    }
+		    document.write("<br>");
+	    }
+    </script>
+</body>
+</html>

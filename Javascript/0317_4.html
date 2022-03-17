@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 데이터</title>
+</head>
+<body>
+    <script>
+        const arr2 = ["김철수", "부산", "010-6666-7777"];
+
+        const obj = {
+            name: arr2,
+            region: "인천",
+            phone: "010-2222-3333",
+            height: 160
+        }
+
+        console.log(obj);
+        console.log(obj.name);
+        console.log(obj.name[1]);
+        // 위처럼 데이터명으로 하는 게 헷갈리면 따로 obj.name을 변수로 만들어서 뒤에 [1]을 붙여도 같은 결과가 나온다
+    </script>
+</body>
+</html>

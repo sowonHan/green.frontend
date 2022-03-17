@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 문제 2-3</title>
+</head>
+<body>
+    <script>
+        let a = prompt("첫 번째 숫자를 입력하세요", "0");
+        let b = prompt("두 번째 숫자를 입력하세요", "0");
+        let c = prompt("세 번째 숫자를 입력하세요", "0");
+        let sum = Number(a) + Number(b) + Number(c);
+        let average = sum / 3;
+
+        if (a == b && b == c) {
+            document.write("최대값 :", a, "<br />", "최소값 :", a, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+        } else if (a > b && a > c) {
+            if (b > c) {
+                document.write("최대값 :", a, "<br />", "최소값 :", c, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+            } else {
+                document.write("최대값 :", a, "<br />", "최소값 :", b, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+            }
+        } else if (b > a && b > c) {
+            if (a > c) {
+                document.write("최대값 :", b, "<br />", "최소값 :", c, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+            } else {
+                document.write("최대값 :", b, "<br />", "최소값 :", a, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+            }
+        } else if (c > a && c > b) {
+            if (a > b) {
+                document.write("최대값 :", c, "<br />", "최소값 :", b, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+            } else {
+                document.write("최대값 :", c, "<br />", "최소값 :", a, "<br />", "합계 :", sum, "<br />", "평균 :", average);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 문제2</title>
+</head>
+<body>
+    <h2>문제 2-1</h2>
+    <script>
+        let num = 0;
+
+        if (num > 0) {
+            console.log("양수");
+        } else if (num == 0) {
+            console.log("0");
+        } else {
+            console.log("음수");
+        }
+    </script>
+    <p>풀이 완료~</p>
+
+    <h2>문제 2-2</h2>
+    <script>
+        let height = prompt("고객님의 신장을 입력해주세요","0");
+
+        if (height >= 150) {
+            alert("놀이기구 이용 가능!");
+        } else {
+            let q = confirm("부모님과 함께 왔나요?");
+            if (q) {
+                document.write("좋은 시간 보내렴~");
+            } else {
+                document.write("어른 모시고 다시 오렴~");
+            }
+        }
+    </script>
+</body>
+</html>

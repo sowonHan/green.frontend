@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 문제1</title>
+</head>
+<body>
+    <script>
+        let num = 10;
+
+        if (num >= 50) {
+            document.write("이상");
+        } else {
+            document.write("미만");
+        }
+
+        document.write("<hr />")
+
+        let i = 30;
+
+        if (i % 3 == 0) {
+            document.write("3의 배수");
+        } else {
+            document.write("3의 배수 아님");
+        }
+
+        document.write("<hr />")
+
+        let grade = 4;
+        let score = 70;
+
+        if (grade == 4) {
+            if (score >= 70) {
+                document.write("합격");
+            } else {
+                document.write("불합격");
+            }
+        } else if (score >= 60) {
+            document.write("합격");
+        } else {
+            document.write("불합격");
+        }
+    </script>
+</body>
+</html>

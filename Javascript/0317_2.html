@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <p>함수라든지 코드 전체를 객체화하면 계속 가져다 쓸 수 있어서 재사용성과 생산성이 높아진다.</p>
+    <p>객체 : 기능(Method = 함수(function)), 속성</p>
+    <p>Java에서는 메소드라고 부르고 Javascript에서는 함수라고 부른다.</p>
+    <p>객체: 기능(볼륨 증감, 키, 끄고 켜기) & 속성(너비, 색상, 해상도)</p>
+    <p>ex) 자동차: 기능(주행, 에어컨, 음악 등) & 속성(색상, 연비, 브랜드)</p>
+    <p>ex) 인간: 기능(걷다, 달리다, 잠) & 속성(키 160 나이 30)</p>
+    <p>교제 88p 예시 참고</p>
+
+    <h2>자바스크립트에서 제공하는 객체</h2>
+    <p>내장 객체, 브라우저 객체(BOM), 문서 객체(DOM)</p>
+    <p>내장 객체 : 자바스크립트 엔진에 내장된 객체. (자바스크립트 만든 사람이 미리 만들어둔 거라고 보면 됨) Date(날짜), Math(루트 같은 수학 함수), Array(데이터를 편하게 다루게 해줌), String(문자열 다루기 쉽게)</p>
+    <p>브라우저 객체(BOM) : (window.)prompt("",""), (window.)location.href, alert("")</p>
+    <p>브라우저 객체는 브라우저에서 지원해주는 것</p>
+    <p>문서 객체(DOM) : html 문서와 태그. html에서 배운 것들의 구조를 DOM TREE라고 보면 됨</p>
+    
+    <h2>내장 객체</h2>
+    <script>
+        var today = new Date( ); //새로운 객체를 생성한다. 한국 표준으로 오늘 날짜와 시간이 값으로 들어오게 됨
+        var nowMonth = today.getMonth( ), //getMonth 쓰면 한 달이 깎여서 출력된다 오류 아님
+                        nowDate = today.getDate( ),
+                        nowDay = today.getDay( ); //숫자로 나오는데 요일로 바꾸는 함수가 또 따로 있음
+        
+        document.write("<h1>오늘 날짜 정보</h1>");
+        document.write("현재 월: " + nowMonth, "<br>");
+        document.write("현재 일: " + nowDate, "<br>");
+        document.write("현재 요일:" + nowDay, "<br>");
+        
+        var worldcup = new Date(2002, 4, 31);
+        //괄호 안에 숫자를 넣는 건 생성자라고 부른다. 개발자 콘솔에서는 5월로 표시됨 (위랑 같은 맥락인데 이유는 모름)
+        var theMonth = worldcup.getMonth( ),
+                        theDate = worldcup.getDate( ),
+                        theDay = worldcup.getDay( );
+        
+        document.write("<h1>월드컵 날짜 정보</h1>");
+        document.write("2002월드컵 몇 월: " + theMonth, "<br>");
+        document.write("2002월드컵 몇 일: " + theDate, "<br>");
+        document.write("2002월드컵 무슨 요일: " + theDay, "<br>");
+    </script>
+
+    <hr />
+
+    <script>
+        var today = new Date();
+        var nowYear = today.getFullYear();
+        console.log(nowYear); //2022 뜸
+        
+        var theDate = new Date(nowYear, 11, 31);
+        var diffDate = theDate.getTime( ) - today.getTime( );
+        // 밀리초로 변환해야 계산이 된다
+        
+        var result = Math.ceil( diffDate / (60 * 1000 * 60 * 24) ); //1일
+        document.write("<h1>오늘부터 올해 연말까지 남은 날짜</h1>");
+        document.write("D-day: " + result + "일 남았습니다.");
+    </script>
+
+    
+
+</body>
+</html>
