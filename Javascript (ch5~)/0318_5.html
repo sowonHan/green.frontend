@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        // 호이스팅(끌어올리기)
+        // 일반적으로는 위에서 아래로 내려가면서 실행하지만, 호이스팅 기능이 있어서 밑에 있는 정의를 위로 끌어다 쓴다. 그래서 정의하기 전에 함수를 실행시켜도 결과를 낼 수 있다는 것.
+        const a = 1, b = 2;
+        document.write(result1, "<br />");
+        
+        /* function 지어줄 함수 이름(매개변수) {}
+        함수 이름은 네이밍 가이드에 따라 카멜케이스로 입력 권고
+        매개변수는 받을 변수 */
+
+        const result1 = add(a, b);
+
+        // 함수를 정의한 상태
+        // 함수 정의(ES5) 방법 1
+        function add(num1, num2) {
+            const result = num1 + num2;
+            // return문을 만나면 함수를 빠져나온다. 그래서 밑에 뭘 더 써놔도 return문 밑에 있는 애들은 실행이 안 된다.
+            return result;
+        }
+
+        // 함수를 실행
+        // return 없는 상태로 이것만 하면 undefined로 출력된다. 함수 자체에 document.write(result); 쓰면 나오긴 한다
+        // document.write(add(a, b));
+
+        // 함수 정의(ES5) 방법 2
+        // 방법2는 호이스팅 불가능 (변수에 함수를 정의해서라고 추측)
+        // const 함수 이름 = function(매개변수) {}
+        const addFnc = function(num1, num2) {
+            const result = num1 + num2;
+            return result;
+        };
+
+        // 함수 정의(ES6) 방법
+        // ES6 방법도 호이스팅 불가능 (변수에 함수를 정의해서라고 추측)
+        const addFnc2 = (num1, num2) => {
+            const result = num1 + num2;
+            return result;
+        };
+
+
+        
+        const result2 = addFnc(a, b);
+        const result3 = addFnc2(a, b);
+
+        
+        document.write(result2, "<br />");
+        document.write(result3);
+
+
+
+    </script>
+</body>
+</html>
