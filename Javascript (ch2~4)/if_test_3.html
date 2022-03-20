@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>조건문 보너스 문제</title>
+</head>
+
+<body>
+    <script>
+        let vm = [
+            { name: '허니버터', price: 1300 },
+            { name: '칸쵸', price: 1500 },
+            { name: '프링글스', price: 3000 }
+        ]
+
+        let money = prompt("돈을 넣어주세요.", "0");
+
+        if (money == 0 || money == null) {
+            alert("돈을 넣지 않아 자판기를 이용할 수 없습니다!");
+            location.reload();
+        } else {
+            let snack = prompt("허니버터, 칸쵸, 프링글스 중에서 과자를 선택해주세요.", "");
+
+            if (money >= 3000) {
+                if (snack == vm[0].name) {
+                    document.write(vm[0].name + "<br /> 거스름돈" + (money - 1300) + "원");
+                } else if (snack == vm[1].name) {
+                    document.write(vm[1].name + "<br /> 거스름돈" + (money - 1500) + "원");
+                } else if (snack == vm[2].name) {
+                    document.write(vm[2].name + "<br /> 거스름돈" + (money - 3000) + "원");
+                } else {
+                    alert("해당 과자가 자판기에 존재하지 않습니다!");
+                    location.reload();
+                }
+            } else if (money < 3000 && money >= 1500) {
+                if (snack == vm[0].name) {
+                    document.write(vm[0].name + "<br /> 거스름돈" + (money - 1300) + "원");
+                } else if (snack == vm[1].name) {
+                    document.write(vm[1].name + "<br /> 거스름돈" + (money - 1500) + "원");
+                } else if (snack == vm[2].name) {
+                    alert("돈이 모자랍니다!");
+                    location.reload();
+                } else {
+                    alert("해당 과자가 자판기에 존재하지 않습니다!");
+                    location.reload();
+                }
+            } else if (money < 1500 && money >= 1300) {
+                if (snack == vm[0].name) {
+                    document.write(vm[0].name + "<br /> 거스름돈" + (money - 1300) + "원");
+                } else if (snack == vm[1].name || snack == vm[2].name) {
+                    alert("돈이 모자랍니다!");
+                    location.reload();
+                } else {
+                    alert("해당 과자가 자판기에 존재하지 않습니다!");
+                    location.reload();
+                }
+            } else {
+                alert("돈이 모자랍니다!");
+                location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>
