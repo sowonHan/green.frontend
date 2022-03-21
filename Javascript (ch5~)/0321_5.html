@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 초깃값</title>
+    <script>
+        const myFunc1 = (name, age) => {
+            return `안녕 ${name} 너의 나이는 ${age}살 이니?`; 
+        };
+
+        console.log(myFunc1('영희'));
+
+        // ES6에서는 매개변수에 초기값을 줄 수 있다.
+        // 값을 따로 안 주면 초기값이 출력된다.
+        const myFunc2 = (name = '영희', age = 22) => {
+            return `안녕 ${name} 너의 나이는 ${age}살 이니?`; 
+        };
+
+        console.log(myFunc2());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

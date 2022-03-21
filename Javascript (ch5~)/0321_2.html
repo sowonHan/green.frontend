@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 함수 </title>
+<script>
+    /* 이렇게 (function(){}()); 껍데기를 씌우면 함수명과 변수가 같아도 충돌이 나지 않는다.
+    이러한 원초적 형태로 코드를 작성하는 자바스크립트를 '바닐라 스크립트'라고 부른다. 근데 요즘은 let이랑 const가 나오면서 사용성은 떨어진 상태. */
+	// ES6 문법으로 함수 정의해도 되는 것 확인!
+	(function() {
+		var num = 100;
+		function menu( ) {
+			num += 100;
+			alert(num);
+		}
+		menu( );
+	}());
+
+	(function(){
+		var num = 100;
+		function menu( ) {
+			alert(num);
+		}
+	}( ));
+</script>
+</head>
+<body>
+</body>
+</html>

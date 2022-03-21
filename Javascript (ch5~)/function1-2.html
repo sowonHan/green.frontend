@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>함수문제 1-2</title>
+
+    <script>
+        function Cal(num1, num2) {
+            this.num1 = num1;
+            this.num2 = num2;
+        }
+
+        Cal.prototype.add = function() {
+            let sum = num1 + num2;
+            console.log(sum);
+        };
+
+        Cal.prototype.sub = function() {
+            let sub = num1 - num2;
+            console.log(sub);
+        };
+
+        Cal.prototype.division = function() {
+            let div = num1 * num2;
+            console.log(div);
+        };
+
+        Cal.prototype.multiple = function() {
+            let mul = num1 / num2;
+            console.log(mul);
+        };
+
+        const result = new Cal(30, 3);
+
+        result.add();
+        result.sub();
+        result.division();
+        result.multiple();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

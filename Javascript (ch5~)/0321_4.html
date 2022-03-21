@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map과 filter</title>
+</head>
+<body>
+    <script>
+        //map 함수: 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
+
+        // ES5
+        const array1 = [1, 4, 9, 16];
+
+        let arr1 = array1.map(function(item, index, array) {
+            // 필터랑 똑같다. item index array 이름은 정해진 것 아니고 마음대로 써도 된다
+            console.log(item, index, array);
+            return item * 2;
+        });
+        console.log(arr1);
+
+
+        // // ES6
+        // 여기도 매개변수 1개니까 (item)을 item으로 써도 된다.
+        let arr2 = array1.map((item) => item * 2);
+        
+        // 이것 역시 결과값이 배열
+        console.log(arr2); 
+
+        // 실습용 코드
+        const array2 = ['배','감','사과','참외'];
+
+        let arr3 = array1.map(item => `내가 좋아하는 과일은 ${item}이다.`);
+
+        console.log(arr3);
+
+
+
+        //filter 함수: 주어진 함수를 통과하는 모든 요소를 모아 새로운 배열로 반환
+
+        //ES5
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+        // 배열 요소중에서 모두 7보다 작은 요소만 모아 배열로 리턴
+        var val = words.filter(function (word, index, array) { //(word) 이렇게만 적어도 되긴 함
+            // word라고 적은 element는 처리할 현재 요소
+            // index는 처리할 현재 요소의 색인 번호
+            // array는 호출된 배열
+            console.log(word, index, array);
+            // return은 해당 값이 true일 때만 리턴시킨다.
+            return word.length > 6;
+        });
+
+        // 필터로 걸러진 결과값도 배열.
+        console.log(val);
+
+        // 실습용 코드
+        const hanWords = ['한라봉','감', '사과', '샤인머스캣','파인애플', '킹스베리'];
+
+        let value = hanWords.filter(function(word, index, array) {
+            console.log(word, index, array);
+
+            return word.length > 3;
+        });
+
+        console.log(value);
+
+
+        // ES6
+
+        // 매개변수 1개여서 (word)라고 안 쓰고 word라고 쓴 거
+        const result = words.filter(word => word.length > 6);
+
+        console.log(result);
+
+
+    </script>
+
+    <p>map과 filter의 차이 : 필터는 배열 내에서 결과값이 참인 요소만 걸러주는 거고, 맵은 배열 내 요소 자체를 변화시켜서 새로운 배열을 만드는 것.</p>
+</body>
+</html>
