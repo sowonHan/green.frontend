@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>함수문제 1-3</title>
+
+    <script>
+        class Cal {
+            constructor(a, b) {
+                this.num1 = a;
+                this.num2 = b;
+            }
+
+            // ES6 객체정의 역시 prototype처럼 함수를 따로 빼서 별도의 스코프를 형성하기 때문에 a,b가 정의되지 않는다.
+            add() {
+                let sum = this.num1 + this.num2;
+                console.log(sum);
+            };
+
+            sub() {
+                let sub = this.num1 - this.num2;
+                console.log(sub);
+            };
+
+            division() {
+                let div = this.num1 * this.num2;
+                console.log(div);
+            };
+
+            multiple() {
+                let mul = this.num1 / this.num2;
+                console.log(mul);
+            };
+        };
+
+        const result = new Cal(30, 3);
+
+        result.add();
+        result.sub();
+        result.division();
+        result.multiple();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

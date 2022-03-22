@@ -13,23 +13,24 @@
             this.num2 = num2;
         }
 
+        // prototype은 function 형태와 달리 함수를 따로 빼서 쓰기 때문에 매개변수 num1,2가 정의되지 않은 상태라 사용할 수 없었다. 그래서 생성자인 this.num1,2를 사용.
         Cal.prototype.add = function() {
-            let sum = num1 + num2;
+            let sum = this.num1 + this.num2;
             console.log(sum);
         };
 
         Cal.prototype.sub = function() {
-            let sub = num1 - num2;
+            let sub = this.num1 - this.num2;
             console.log(sub);
         };
 
         Cal.prototype.division = function() {
-            let div = num1 * num2;
+            let div = this.num1 * this.num2;
             console.log(div);
         };
 
         Cal.prototype.multiple = function() {
-            let mul = num1 / num2;
+            let mul = this.num1 / this.num2;
             console.log(mul);
         };
 

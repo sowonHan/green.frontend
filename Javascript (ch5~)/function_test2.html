@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>함수문제 2 자동차 생산하기</title>
+
+    <script>
+        class Car {
+            constructor(name, color, price, engine) {
+                this.name = `K${name}`;
+                this.color = color;
+                this.price = price;
+                this.engine = `I${engine}`;
+            };
+
+            nameAndColor() {
+                console.log(`모델명: ${this.name} 색상: ${this.color}`);
+            };
+
+            risePrice(priceUp) {
+                const newPrice = this.price + priceUp;
+                // 한 줄에 다 나오게 하려면 아래 주석처럼 작성. 현재 활성화된 건 2줄로 표현되는 중
+                /* console.log(`${this.name} 가격 인상 전 ${this.price}
+${this.name} 가격 인상 후 ${newPrice}`); */
+                console.log(`${this.name} 가격 인상 전 ${this.price}`);
+                console.log(`${this.name} 가격 인상 후 ${newPrice}`);
+                
+            }
+
+            changeEngine(enNum) {
+                const newEngine = `I${enNum}`;
+                
+                /* console.log(`${this.name} 엔진 변경 전 ${this.engine}
+${this.name} 엔진 변경 후 ${newEngine}`); */
+                console.log(`${this.name} 엔진 변경 전 ${this.engine}`);
+                console.log(`${this.name} 엔진 변경 후 ${newEngine}`);
+            }
+        }
+
+        const car1 = new Car(5, 'white', 3000, 4);
+        const car2 = new Car(7, 'white', 3800, 5);
+
+        car1.nameAndColor();
+        car2.nameAndColor();
+        car1.risePrice(100);
+        car2.changeEngine(6);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
