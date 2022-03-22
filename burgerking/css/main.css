@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+.wrap {
+    background: wheat;
+}
+
+section .con {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* 내용 없이 영역만 잡아주는 경우는 높이 100%를 잡아줘야 보인다. */
+    height: 100%;
+}
+
+.slider {
+    height: 480px;
+}
+
+.slider__content {
+    background: lightgoldenrodyellow;
+}
+
+.youtube {
+    height: 605px;
+}
+
+.youtube__content {
+    background: orangered;
+}
+
+.sns {
+    height: 160px;
+}
+
+.sns__content {
+    background: paleturquoise;
+}
+
+.sns__content > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.sns__content > ul > li {
+    /* 1:1:1의 비율로 맞추기 */
+    flex: 1;
+    text-align: center;
+}
+
+.guide {
+    height: 480px;
+}
+
+.guide__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.guide__content > div {
+    flex: 1;
+    text-align: center;
+}
+
+.guide__content > .content__app {
+    background: #fcd2e0;
+}
+
+.guide__content > .content__delivery {
+    background: cornflowerblue;
+}
+
+.store {
+    height: 597px;
+}
+
+.store__content {
+    background: #b2fab2;
+}
+
+.store__content ul {
+    overflow: hidden;
+    /* 가변 그리드 공식 적용. (1144 ÷ 1440) * 100 */
+    width: 79.44%;
+    margin: 0 auto;
+}
+
+.store__content ul li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+.banner {
+    height: 200px;
+}
+
+.banner__content {
+    background: peru;
+}
+
+/* 미디어쿼리 */
+
+/* 767px 이상 */
+@media all and (min-width: 767px) {
+    .guide__content {
+        flex-direction: row;
+    }
+
+    .store__content ul li {
+        width: 16.66%;
+    }
+}
+
+/* 1024px 이상 */
+@media all and (min-width: 1024px) {}

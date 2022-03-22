@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>메서드 분류</title>
+
+    <script>
+        function Person(name, age, phone) {
+            //속성
+            this.name = name;
+            this.age = age;
+            this.phone = phone;
+
+            //non prototype method
+            this.getName = function () {
+                console.log(this.name);
+            };
+        }
+
+        // 프로토타입을 거쳐서 공유하는 프로토타입 메소드와 달리 정적 메소드는 코드를 바로 가져다 쓰므로 그냥 공유한다는 것.
+        //static method
+        Person.age2 = 10;
+        Person.getAge = function (age) {
+            console.log(age);
+        };
+
+        //prototype method
+        Person.prototype.getPhone = function () {
+            console.log(this.phone);
+        };
+
+        Person.getAge(30);
+        console.log(Person.age2);
+        //   Person.getName(); error
+
+        const person = new Person("영희", 20, "01033334444");
+        /* 인스턴스(객체)를 생성해야만 사용 가능하다, 숨겨져있고 바로 사용할 수 없다는 개념을 '캡슐화'되었다고 표현
+        인스턴스를 생성해야 사용 가능한 프로토타입 메소드, 논프로토타입 메소드를 인스턴스 메소드라고 한다.
+        (메모리 때문에 보통은 프로토타입 메소드라고 보면 될 듯) */
+        person.getName();
+        person.getPhone();
+        //   person.getAge(40); error
+
+        
+        // =======================================================================================================
+
+
+        class MyClass {
+            constructor(name, age) {
+                // 생성자
+                this.name = name;
+                this.age = age;
+            }
+
+            sayHello() {
+                // 함수
+                console.log(`안녕 ${this.name} 너의 나이는 ${this.age}살이다`);
+            }
+
+            // 정적 변수
+            static phone = "01022223333";
+            
+            //정적 함수
+            static compareAge() {
+                console.log(`static 메소드 입니다`);
+            }
+        }
+
+        // myClass 메서드 및 속성과 함수 상속 (정적 메소드도 상속받을 수 있다)
+        class UserProfile extends MyClass {
+            userName() {
+                console.log(this.name);
+            }
+        }
+
+        console.log(MyClass.phone);
+        MyClass.compareAge();
+
+        const profile = new UserProfile("영희", 22);
+
+        profile.sayHello(); // 안녕 영희 너의 나이는 22살이다.
+        profile.userName(); // 영희
+    </script>
+</head>
+
+<body>
+    <p>클래스룸에서 객체 ppt 참고</p>
+</body>
+
+</html>

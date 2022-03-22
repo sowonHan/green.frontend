@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./library/fontawesome-free-5.15.3-web/css/all.min.css">
+
+    <title>버거킹 메인화면</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__nav">
+            <div class="trigger">
+                <!-- a 태그에 폰트어썸 아이콘을 쓰면 웹 접근성에서 잡히기 때문에 버튼 사용 -->
+                <button class="mobile hamburger"><i class="fas fa-bars fa-lg"></i></button>
+            </div>
+            <h1>
+                <a href="./index.html"><img src="./img/logo.gif" alt="로고" class="logo"></a>
+            </h1>
+            <div class="menu">
+                <nav>
+                    <ul class="menu__main">
+                        <li class="main__list">
+                            <a href="#">메뉴소개 <i class="fas fa-caret-down"></i></a>
+                            <div>
+                                <ul class="list__drop">
+                                    <li><a href="#">스페셜&할인팩</a></li>
+                                    <li><a href="#">프리미엄</a></li>
+                                    <li><a href="#">와퍼</a></li>
+                                    <li><a href="#">주니어&버거</a></li>
+                                    <li><a href="#">올데이킹&치킨버거</a></li>
+                                    <li><a href="#">사이드</a></li>
+                                    <li><a href="#">음료&디저트</a></li>
+                                    <li><a href="#">독퍼</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="main__list">
+                            <a href="#">매장소개 <i class="fas fa-caret-down"></i></a>
+                            <div>
+                                <ul class="list__drop">
+                                    <li><a href="#">매장찾기</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="main__list">
+                            <a href="#">이벤트 <i class="fas fa-caret-down"></i></a>
+                            <div>
+                                <ul class="list__drop">
+                                    <li><a href="#">이벤트</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="main__list">
+                            <a href="#">브랜드스토리 <i class="fas fa-caret-down"></i></a>
+                            <div>
+                                <ul class="list__drop">
+                                    <li><a href="#">버거킹 스토리</a></li>
+                                    <li><a href="#">WHY 버거킹</a></li>
+                                    <li><a href="#">버거킹 NEWS</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="delivery-order">
+                <button class="button button--shape-red">딜리버리 주문</button>
+            </div>
+        </div>
+        <div class="header__panel"></div>
+    </header>
+    <!-- 메인 콘텐츠를 뜻하는 시멘틱 태그 main을 써도 된다. -->
+    <div class="wrap">
+        <!-- 섹션의 개수를 먼저 파악하는 것이 중요! -->
+        <section class="slider">
+            <div class="slider__content con"></div>
+        </section>
+        <section class="youtube">
+            <div class="youtube__content con"></div>
+        </section>
+        <section class="sns">
+            <div class="sns__content con">
+                <ul>
+                    <li>YOUTUBE</li>
+                    <li>FACEBOOK</li>
+                    <li>INSTAGRAM</li>
+                </ul>
+            </div>
+        </section>
+        <section class="guide">
+            <div class="guide__content con">
+                <div class="content__app">버거킹 APP 이용방법</div>
+                <div class="content__delivery">딜리버리 이용방법</div>
+            </div>
+        </section>
+        <section class="store">
+            <div class="store__content con">
+                <div>매장찾기</div>
+                <ul>
+                    <li>딜리버리</li>
+                    <li>킹오더</li>
+                    <li>드라이브 스루</li>
+                    <li>24시간</li>
+                    <li>아침메뉴</li>
+                    <li>주차공간</li>
+                </ul>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="banner__content con"></div>
+        </section>
+    </div>
+    <footer class="footer"></footer>
+</body>
+
+</html>
