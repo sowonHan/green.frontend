@@ -15,9 +15,65 @@
 
 <body>
     <header class="header">
+        <div class="header__Mnav">
+            <div class="trigger">
+                <button class="mobile close"><i class="fas fa-times fa-lg"></i></button>
+            </div>
+            <nav class="Mmenu">
+                <ul class="Mmenu__main">
+                    <li onclick="showHide(this)">
+						<span>메뉴소개</span>
+						<span><i class="fas fa-chevron-right"></i></span>
+						<ul class="Mlist__drop">
+							<li><a href="#">스페셜&할인팩</a></li>
+							<li><a href="#">프리미엄</a></li>
+							<li><a href="#">와퍼</a></li>
+							<li><a href="#">주니어&버거</a></li>
+							<li><a href="#">올데이킹&치킨버거</a></li>
+							<li><a href="#">사이드</a></li>
+							<li><a href="#">음료&디저트</a></li>
+							<li><a href="#">독퍼</a></li>
+						</ul>
+					</li>
+					<li onclick="showHide(this)">
+						<span>매장소개</span>
+						<span><i class="fas fa-chevron-right"></i></span>
+						<ul class="Mlist__drop">
+							<li><a href="#">매장찾기</a></li>
+						</ul>
+					</li>
+					<li onclick="showHide(this)">
+						<span>이벤트</span>
+						<span><i class="fas fa-chevron-right"></i></span>
+						<ul class="Mlist__drop">
+							<li><a href="#">이벤트</a></li>
+							<li><a href="#">신규매장</a></li>
+						</ul>
+					</li>
+					<li onclick="showHide(this)">
+						<span>브랜드스토리</span>
+						<span><i class="fas fa-chevron-right"></i></span>
+						<ul class="Mlist__drop">
+							<li><a href="#">버거킹 스토리</a></li>
+							<li><a href="#">WHY 버거킹</a></li>
+							<li><a href="#">버거킹 NEWS</a></li>
+						</ul>
+					</li>
+					<li onclick="showHide(this)">
+						<span>고객센터</span>
+						<span><i class="fas fa-chevron-right"></i></span>
+						<ul class="Mlist__drop">
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">버거킹 앱이용안내</a></li>
+							<li><a href="#">FAQ</a></li>
+						</ul>
+					</li>
+                </ul>
+            </nav>
+        </div>
         <div class="header__nav">
             <div class="trigger">
-                <!-- a 태그에 폰트어썸 아이콘을 쓰면 웹 접근성에서 잡히기 때문에 버튼 사용 -->
+                <!-- a 태그에 폰트어썸 아이콘을 쓰면 웹 접근성에서 위반되기 때문에 버튼 사용 -->
                 <button class="mobile hamburger"><i class="fas fa-bars fa-lg"></i></button>
             </div>
             <h1>
@@ -69,9 +125,9 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="delivery-order">
-                <button class="button button--shape-red">딜리버리 주문</button>
+                <div class="delivery-order">
+                    <button class="button button--shape-red">딜리버리 주문</button>
+                </div>
             </div>
         </div>
         <div class="header__panel"></div>
@@ -118,6 +174,8 @@
         </section>
     </div>
     <footer class="footer"></footer>
+    <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
