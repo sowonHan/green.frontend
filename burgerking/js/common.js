@@ -62,6 +62,7 @@ https://developer.mozilla.org/ko/docs/Web/API/Window/resize_event */
 /* 3. width가 767px 이상일 때도 모바일 메뉴 보이는 것을 방지 */
 
 window.addEventListener('optimizedResize', () => {
+    // innerWidth : 브라우저 윈도우의 뷰포트 너비로, 수직 스크롤바가 있다면 이를 포함한다
     let winWidth = window.innerWidth;
 
     if (winWidth >= 767) {

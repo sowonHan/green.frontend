@@ -190,8 +190,58 @@
 /* 푸터 */
 
 .footer {
-    height: 680px;
-    background: rebeccapurple;
+    height: 350px;
+    background: #2b0200;
+    color: rgb(236, 229, 203);
+}
+
+.footer__level1 {
+    display: none;
+}
+
+.footer__level2 > div {
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__level2 ul {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 20px;
+    justify-content: space-between;
+}
+
+.footer__level2 .button-line {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.footer__level2 .button-line > button {
+    border-radius: 35px;
+    margin-top: 15px;
+    font-size: 0.8em;
+}
+
+.footer__level2 .address-line {
+    padding: 50px 10px 0;
+}
+
+.footer__level2 .address-line > * {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.footer__level2 .address-line > h2 {
+    padding-bottom: 20px;
+}
+
+.footer__level2 .address-line > div {
+    padding-top: 20px;
+}
+
+.footer__level2 > div > .private-line li {
+    font-size: 0.9rem;
 }
 
 /* 미디어쿼리 */
@@ -291,6 +341,63 @@
     .header__nav > h1 .logo {
         /* 로고가 중앙으로 오게 수직정렬 해주는 것 */
         vertical-align: middle;
+    }
+
+    .footer {
+        height: 680px;
+    }
+
+    .footer__level1 {
+        display: block;
+    }
+
+    .footer__level1 > ul.sitemap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 35px 30px;
+        border-bottom: 1px solid;
+    }
+
+    .footer__level1 ul.sitemap__list > li {
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+
+    .footer__level1 ul.sitemap__list > li > a {
+        font-family: 'Nanum Gothic', monospace, sans-serif;
+        font-weight: bold;
+        color: rgb(197, 190, 179);
+    }
+
+    .footer__level1 > ul.sitemap a.top {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    .footer__level1 > ul.sitemap a {
+        color: white;
+    }
+
+    .footer__level2 > div {
+        max-width: 1140px;
+        margin: 60px auto 0;
+        display: flex;
+        /* 이용약관 등이 오른쪽에 가게 하려고 row-reverse 설정 */
+        flex-direction: row-reverse;
+        padding: 0 30px;
+    }
+
+    .footer__level2 > div > .private-line {
+        width: 30%;
+    }
+
+    .footer__level2 > div > .address-line {
+        width: 70%;
+        padding: 0;
     }
 }
 

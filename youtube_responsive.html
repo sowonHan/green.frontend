@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .videoContainer {
+            position: relative;
+            /* 유튜브 비율 16:9를 유지하기 위해 padding-bottom을 이렇게 준다 */
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .videoContainer iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <title>반응형 웹사이트 유튜브 첨부</title>
+</head>
+<body>
+    <div class="videoContainer">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/irp6NcVUm8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</body>
+</html>

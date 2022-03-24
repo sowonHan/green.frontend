@@ -2,6 +2,7 @@
 
 .wrap {
     background: wheat;
+    padding-top: 60px;
 }
 
 section .con {
@@ -11,20 +12,51 @@ section .con {
     height: 100%;
 }
 
-.slider {
-    height: 480px;
+.slider__content .swiper {
+    width: 100%;
+    height: 600px;
 }
 
-.slider__content {
-    background: lightgoldenrodyellow;
+.slider__content .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.slider__content .swiper-slide.slide1 {
+    background: url(../img/slide1_S.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.slider__content .swiper-slide.slide2 {
+    background: url(../img/slide2_S.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.slider__content .swiper-slide.slide3 {
+    background: url(../img/slide3_S.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .youtube {
     height: 605px;
-}
-
-.youtube__content {
-    background: #db4008;
 }
 
 .sns {
@@ -32,18 +64,53 @@ section .con {
 }
 
 .sns__content {
-    background: paleturquoise;
+    background: #8a361d;
 }
 
-.sns__content > ul {
+.content__list {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
-.sns__content > ul > li {
-    /* 1:1:1의 비율로 맞추기 */
+.content__list > li {
     flex: 1;
     text-align: center;
+}
+
+.content__list > li > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.content__list > li > a > div > span {
+    display: block;
+}
+
+.content__list > li > a > .fab {
+    font-size: 3rem;
+    color: white;
+}
+
+.content__list > li > a > .icon {
+    font-size: 3rem;
+    padding-right: 0px;
+}
+
+.content__list > li > a > .sns-txt {
+    text-align: center;
+}
+
+.content__list > li > a > .sns-txt > span:nth-of-type(2) {
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .guide {
@@ -61,32 +128,77 @@ section .con {
 }
 
 .guide__content > .content__app {
-    background: #fcd2e0;
+    background-color: #C7A086;
+    background-image: url(../img/app.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .guide__content > .content__delivery {
-    background: cornflowerblue;
+    background-color: #b38567;
+    background-image: url(../img/delivery.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .store {
-    height: 597px;
+    height: 370px;
 }
 
 .store__content {
-    background: #b2fab2;
+    background: white;
 }
 
-.store__content ul {
+.store__content > .search {
+    padding: 50px 5px;
+}
+
+.store__content > .search .button {
+    border-radius: 30px;
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+.store__content > .search > h2, .store__content > .search > p {
+    text-align: center;
+}
+
+.store__content > .search > h2 {
+    font-size: 2rem;
+}
+
+.store__content > .search > p:nth-of-type(1) {
+    font-size: 1.5rem;
+}
+
+.store__content > .search > p:nth-of-type(2) {
+    margin-bottom: 30px;
+}
+
+.store__content > .search > ul {
     overflow: hidden;
-    /* 가변 그리드 공식 적용. (1144 ÷ 1440) * 100 */
-    width: 79.44%;
     margin: 0 auto;
 }
 
-.store__content ul li {
+.store__content > .search > ul li {
     float: left;
     width: 33.33%;
     text-align: center;
+}
+
+.store__content > .search > ul li > img {
+    /* 이미지에 margin을 주려면 display를 block으로 설정해야 한다 */
+    display: block;
+    width: 60px;
+    margin: 0 auto;
+}
+
+.store__content > .search > ul li > .search-txt {
+    display: none;
+}
+
+.store__content > .search > ul li > em {
+    color: red;
 }
 
 .banner {
@@ -94,21 +206,164 @@ section .con {
 }
 
 .banner__content {
-    background: peru;
+    background-image: url(../img/bg_home_cs.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__content > .order-text {
+    padding: 40px 30px 10px;
+}
+
+.banner__content > .phone {
+    font-size: 2.5rem;
+    padding-left: 30px;
 }
 
 /* 미디어쿼리 */
 
 /* 767px 이상 */
 @media all and (min-width: 767px) {
+    .wrap {
+        padding-top: 120px;
+    }
+
+    .slider__content .swiper {
+        height: 380px;
+    }
+    
+    .slider__content .swiper-slide.slide1 {
+        background: url(../img/slide1.png);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .slider__content .swiper-slide.slide2 {
+        background: url(../img/slide2.png);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .slider__content .swiper-slide.slide3 {
+        background: url(../img/slide3.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .content__list > li > a {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .content__list > li > a > .icon {
+        font-size: 5rem;
+        padding-right: 10px;
+    }
+
+    .content__list > li > a > .sns-txt {
+        text-align: left;
+    }
+
     .guide__content {
         flex-direction: row;
     }
 
-    .store__content ul li {
-        width: 16.66%;
+    .guide__content > .content__delivery {
+        background-size: 120% 100%;
+    }
+
+    .store {
+        height: 597px;
+    }
+
+    .store__content > .search {
+        padding: 140px 5px;
+    }
+
+    .store__content > .search > h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .store__content > .search > ul li {
+        width: 16.45%;
+        border-right: 1px solid rgb(209, 209, 209);
+    }
+
+    .store__content > .search > ul li:last-child {
+        border-right: none;
+    }
+
+    .store__content > .search > ul {
+        /* 가변 그리드 공식 적용. (1144 ÷ 1440) * 100 */
+        width: 79.44%;
+        margin: 0 auto;
+    }
+
+    .store__content > .search > ul li > img {
+        width: 90px;
+    }
+
+    .store__content > .search > ul li > .search-txt {
+        display: block;
+        margin: 15px 0;
+    }
+
+    .store__content > .search > ul li > em {
+        font-size: 1.4rem;
+    }
+
+    .banner__content {
+        flex-direction: row;
+    }
+
+    .banner__content > .order-text {
+        /* 630px ÷ 1140px */
+        width: 55.26%;
+        /* 왼쪽 여백을 50px 만큼 주고 싶어서 */
+        /* 50px ÷ 1140px */
+        padding: 0 0 0 4.38%;
+    }
+
+    .banner__content > .order-text > h1 {
+        font-size: 2.3rem;
+        padding-top: 60px;
+    }
+
+    .banner__content > .order-text > p {
+        font-size: 1.3rem;
+        display: inline;
+    }
+
+    .banner__content > .order-text > p:nth-of-type(2):before {
+        /* 앞에다 슬래시 문자를 넣어주는 기능 */
+        content: '/ ';
+    }
+
+    .banner__content > .phone {
+        /* 410px ÷ 1140px */
+        width: 36.96%;
+        /* 50px ÷ 1140px */
+        padding-right: 4.38%;
+        padding-top: 75px;
+        text-align: center;
     }
 }
 
 /* 1024px 이상 */
-@media all and (min-width: 1024px) {}
+@media all and (min-width: 1024px) {
+    .slider__content .swiper {
+        height: 480px;
+    }
+
+    .guide {
+        height: 380px;
+    }
+
+    .guide__content > .content__delivery {
+        background-size: cover;
+    }
+}
