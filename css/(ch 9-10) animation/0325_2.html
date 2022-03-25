@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Transition Basic</title>
+    <style>
+        #graph {
+            width: 610px;
+            border: 3px solid black;
+        }
+
+        .bar {
+            width: 10px; height: 50px;
+            background-color: orange;
+            margin: 5px;
+            /* 애니메이션에서 변형시킬 속성 */
+            transition-property: background-color, width;
+            /* property랑 서로 짝꿍. 백그라운드 컬러는 1초 동안, width는 5초 동안 실행 */
+            transition-duration: 1s, 5s;
+        }
+
+        #graph:hover > .bar {
+            width: 600px;
+        }
+
+        .bar:nth-child(1) {
+            /* delay는 말 그대로 애니메이션을 몇 초 뒤에 실행하라고 미루는 것.
+            마우스를 떼서 그래프가 원래대로 돌아가는 모션 또한 함께 적용되어 그래프가 따로따로 되돌아간다 */
+            transition-delay: 0s;
+            /* 시간당 진행 속도. 각각의 차이는 http://cubic-bezier.com/ 참고 (클래스룸 ppt, 교재 409p) */
+            /* 다른 설정 다 없애고 타이밍 펑션만 적용해보면 차이 잘 보임 */
+            transition-timing-function: linear; 
+        }
+        .bar:nth-child(2) { 
+            transition-delay: 1s;
+            transition-timing-function: ease; 
+        }
+        .bar:nth-child(3) { 
+            transition-delay: 2s;
+            transition-timing-function: ease-in; 
+        }
+        .bar:nth-child(4) { 
+            transition-delay: 3s;
+            transition-timing-function: ease-in-out;
+        }
+        .bar:nth-child(5) { 
+            transition-delay: 4s;
+            transition-timing-function: ease-out;
+        }
+
+        #graph:hover > .bar:nth-child(1) {
+            background-color: red;
+            width: 100px;
+        }
+        #graph:hover > .bar:nth-child(2) { 
+            background-color: blue;
+            width: 300px;
+        }
+        #graph:hover > .bar:nth-child(3) { 
+            background-color: green;
+            width: 400px;
+        }
+        #graph:hover > .bar:nth-child(4) { 
+            background-color: yellow;
+            width: 200px;
+        }
+        #graph:hover > .bar:nth-child(5) { 
+            background-color: pink;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3 Transition Graph</h1>
+    <div id="graph">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>animation keyframes</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { position: relative; }
+        #box {
+            position: absolute;
+            width: 200px; height: 200px;
+            border-radius: 100px;
+            text-align: center;
+            /* linear-gradient는 그라데이션. 아래 주석과 활성화된 설정과 결과는 똑같다 */
+            /* background: linear-gradient(#e4b7da 0%, #db36a4 100%); */
+            background: linear-gradient(to bottom, #e4b7da, #db36a4);
+
+            /* keyfrmaes에서 정한 이름 */
+            animation-name: rint;
+            /* 얘도 똑같이 2초 동안 실행한다는 뜻 */
+            animation-duration: 2s;
+            /* 애니메이션 반복 횟수. */
+            animation-iteration-count: 3;
+            /* 반복하는 형태를 지정. alternate는 from에서 to로 갔다가 to에서 from으로 진행.
+            normal은 from에서 to로 갔다가 다시 처음 from부터 시작. */
+            animation-direction: alternate;
+            /* transition이랑 똑같음 */
+            animation-timing-function: linear;
+            /* paused는 애니메이션 중지시키는 기능. default는 running */
+            /* animation-play-state: paused; */
+        }
+
+        #box > h1 {
+            line-height: 200px;
+        }
+        @keyframes rint {
+            /* 0초 */
+            from {
+                left: 0;
+                /* 굴린다(0도) */
+                transform: rotate(0deg);
+            }
+            /* 절반쯤 진행 */
+            50% {
+                left: 500px;
+            }
+            /* 끝 */
+            to { 
+                left: 500px;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Rotation</h1>
+    </div>
+</body>
+</html>

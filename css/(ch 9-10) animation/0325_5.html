@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>3차원 변환</title>
+
+    <style>
+        body {
+            width: 200px;
+            margin: 200px auto;
+
+            /* ms는 마이크로소프트 */
+            /* -ms-perspective: 400; */
+            /* webkit은 크롬 */
+            /* perspective는 벤더 프리픽스(-webkit-)를 붙여야 적용된다 */
+            -webkit-perspective: 400;
+            perspective: 400;
+        }
+
+        section {
+            width: 200px; height: 200px;
+            position: relative;
+            /* animaiton-iteration-count : infinite 하면 애니메이션 무한 반복 */
+            animation: rint 3s linear 0s infinite;
+
+            /* transform-style은 변환을 적용할 때 그 영향이 자신에게만 적용될지 자손에게도 적용될지를 정하는 속성.
+            preserve-3d로 하면 자손에게도 3차원 속성을 유지한다는 뜻 */
+            transform-style: preserve-3d;
+        }
+
+        @keyframes rint {
+            from {
+                transform: rotateX( 0deg) rotateY( 0deg) rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+
+        div {
+            width: 200px; height: 200px;
+            position: absolute; left: 0; top: 0;
+            opacity: 0.3;
+            /* backface-visibility는 정육면체의 뒷면 보이게 할 건지 정하는 것 */
+            /* backface-visibility: hidden; */
+        }
+
+        div:nth-child(1) {
+            transform: rotateY(  0deg) translate3d(0px, 0px, 100px);
+            background: red; 
+        }
+        div:nth-child(2) {
+            transform: rotateY( 90deg) translate3d(0px, 0px, 100px);
+            background: green; 
+        }
+        div:nth-child(3) {
+            transform: rotateY(180deg) translate3d(0px, 0px, 100px);
+            background: blue; 
+        }
+        div:nth-child(4) {
+            transform: rotateY(270deg) translate3d(0px, 0px, 100px);
+            background: yellow;
+        }
+        div:nth-child(5) {
+            transform: rotateX( 90deg) translate3d(0px, 0px, 100px);
+            background: brown; 
+        }
+        div:nth-child(6) {
+            transform: rotateX(270deg) translate3d(0px, 0px, 100px);
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>
