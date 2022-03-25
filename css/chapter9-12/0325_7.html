@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media Query Basic</title>
+    <!-- content="width=device-width : 기기의 너비에 맞추겠다 -->
+    <!-- initial-scale=1.0 : 초기 비율 -->
+    <!-- 뷰포트 meta 태그는 교재 300p 참고 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* 모바일 사이즈 같은 세로 방향(portrait)일 경우 */
+        @media screen and (orientation: portrait) {
+            html {
+                background: red;
+                color: white; font-weight: bold;
+            }  
+        }
+    
+        /* pc 사이즈 같은 가로 배치(landscape)일 경우 */
+        @media screen and (orientation: landscape) {
+            html {
+                background: green;
+                color: white; font-weight: bold;
+            }  
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Aenean luctus congue scelerisque. Maecenas aliquet ante.</p>
+</body>
+</html>

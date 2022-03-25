@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>font-face, import, media</title>
+
+    <!-- 스크린에서 보일 때의 css -->
+    <link rel="stylesheet" href="desktop.css" media="screen" />
+    <!-- 인쇄 시 나타나는 css -->
+    <link rel="stylesheet" href="print.css" media="print" />
+    <!-- all은 모든 곳에서 이렇게 보이라 하는 것. 통합하고 싶으면 미디어 쿼리 쓸 때 all 쓰면 됨 -->
+    
+    <style>
+        /* 이렇게 css 파일을 불러오는 것도 가능한데 임포트가 좀더 속도가 느리다는 듯 */
+        @import url(StyleSheetA.css);
+        @import url(StyleSheetB.css);
+
+        /* 폰트 파일을 아예 다운 받아놓고 font-face를 쓰면 내가 이름을 AAA처럼 임의로 지정 가능 */
+        @font-face {
+            font-family: 'AAA';
+            /* local은 컴퓨터 내부에 있는 폰트 */
+            src: local('NanumGothic'),
+                url('NanumGothic.eot'),
+                url('NanumGothic.ttf'),
+                url('NanumGothic.woff');
+        }
+
+        * {
+            font-family: 'AAA';
+        }
+    </style>
+</head>
+
+<body>
+    <h1>나눔 고딕</h1>
+    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+    <p>남산 위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리 기상일세</p>
+    <p>가을하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세</p>
+    <p>이기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세</p>
+
+    <p>css 파일 안 가져와서 적용은 하나도 안 됨~</p>
+</body>
+
+</html>
