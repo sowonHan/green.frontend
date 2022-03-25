@@ -15,10 +15,11 @@
             background: Red;
             /* rotate는 회전, scale은 확대 및 축소, skew는 기울이기, translate는 이동(단위px X축, Y축) */
             /* transform은 속성을 설정하는 순서에 따라서 변환되기 때문에 순서를 다르게 쓰면 결과도 달라진다. */
-            transform: rotate(90deg) scale(1.2) skewY(10deg) translate(50px, 20px);
+            transform: skewY(10deg) rotate(90deg) translate(50px, 20px) scale(1.2);
             color: white;
 
             /* 변환하는 기준점, 중심축 설정. ppt 참고 */
+            /* default는 태그 영역의 중심을 기준점으로 잡고있다. 여기서는 div 태그 */
             transform-origin: 100% 100%;
             /* transform-origin: bottom right 해도 같은 의미 */
         }
