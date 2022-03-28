@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="./js/jquery-3.6.0.js"></script>
+<script>
+	$(function(){
+        // find랑 filter랑 같은 기능. 그냥 찾는 거
+		$("#inner_1").find(".txt1")
+		.css({"background-color":"#ff0"});
+
+		$("#inner_1 p").filter(".txt2")
+		.css({"background-color":"#0ff"});
+
+        // 필터 함수처럼 사용할 수 있다
+		$("#inner_2 p").filter(function(idx, obj){
+			console.log(idx);
+            console.log(ogj);
+
+			return idx % 2 == 0;
+		})
+		.css({"background-color":"#0f0"});    
+	});
+
+getElementById
+</script>
+</head>
+<body>
+	<div id="outer_wrap">
+		<h1>콘텐츠 탐색 선택자</h1>
+		<section id="inner_1">
+			<h2>find( ), filter( )</h2>
+			<p class="txt1">내용1</p>
+			<p class="txt2">내용2</p>
+		</section>
+		
+		<section id="inner_2">
+			<h2>filter(function)</h2>
+			<p>index 0</p>
+			<p>index 1</p>
+			<p>index 2</p>
+			<p>index 3</p>
+		</section>
+	</div>
+</body>
+</html>

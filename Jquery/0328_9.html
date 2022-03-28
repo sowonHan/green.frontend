@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		var arr1 = [{
+			"area":"서울", 
+			"name":"무대리"
+			},{
+				"area":"부산", 
+				"name":"홍과장"
+			},{
+				"area":"대전", 
+				"name":"박사장"
+			},{
+				"area":"서울", 
+				"name":"빅마마"
+			}];
+
+        // map 함수와 비슷
+		var arr2 = $.map(arr1, function(a, b){
+            // console.log(a, ",", b) 찍어보면 a는 데이터, b는 인덱스 번호
+			if(a.area == "서울") {
+				return a;
+			}
+		});
+		console.log(arr2);
+		console.log("==== first End ====");
+
+        // filter 함수와 비슷
+		var arr3 = $.grep(arr1, function(a, b){
+			if(a.area == "서울") {
+				return true;
+                // true인 데이터 a를 arr3에 넣어준다
+			} else {
+				return false;
+			}
+		});
+		console.log(arr3);
+		console.log("==== Second End ====");    
+	});
+</script>
+</head>
+<body>
+</body>
+</html>
