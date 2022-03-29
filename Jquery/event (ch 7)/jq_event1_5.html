@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		$(function () {
+			$(".btn1").on("click", function (e) {
+				// 이벤트만 실행하고 이동은 하지 않음
+				// preventDefault : 초깃값을 막는다 예시처럼 주로 a 태그와 자주 쓰인다
+				// e에는 발생한 이벤트에 대한 정보값이 들어가있음. 콘솔로그 찍어보면 알 수 있다
+				e.preventDefault();
+				$(".txt1")
+					.css({ "background-color": "#ff0" });
+			});
+			$(".btn2").on("click", function (e) {
+				// 이벤트가 일어남과 동시에 링크로 이동
+				$(".txt2")
+					.css({ "background-color": "#0ff" });
+			});
+			$(".btn3").on("dblclick", function () {
+				$(".txt3")
+					.css({ "background-color": "#0f0" });
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p><a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a></p>
+	<p class="txt1">내용1</p>
+	<p><a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a></p>
+	<p class="txt2">내용2</p>
+	<p><button class="btn3">버튼3</button></p>
+	<p class="txt3">내용3</p>
+</body>
+
+</html>

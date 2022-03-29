@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		// scroll : 스크롤 움직일 때마다 이벤트 발생
+		$(window).on("scroll", function () {
+			// this는 이벤트가 발생한 해당 객체를 의미. 여기서는 window가 된다
+			var sc_top = $(this).scrollTop();
+			var sc_left = $(this).scrollLeft();
+
+			$(".top").text(sc_top);
+			$(".left").text(sc_left);
+		});
+	</script>
+	<style>
+		body {
+			height: 10000px;
+			width: 5000px;
+		}
+
+		#wrap {
+			position: fixed;
+			left: 10px;
+			top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<p>scrollTop: <span class="top">0</span>px</p>
+		<p>scrollLeft: <span class="left">0</span>px</p>
+	</div>
+</body>
+
+</html>

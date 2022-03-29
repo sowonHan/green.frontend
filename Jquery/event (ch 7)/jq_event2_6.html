@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+		// on은 2개 이상의 이벤트를 등록할 때 사용. bind도 마찬가지인데 bind는 라이브 이벤트가 적용 안 되는 듯
+		// 제이쿼리 1.7부터는 on을 권장하고 있다니 그냥 on만 쓰기로
+
+		$(".btn_1.on").on("mouseover focus", function() {
+			alert("HELLO!");
+		});
+
+		$(".btn_1").addClass("on");
+
+		// 라이브(동적) 이벤트 등록 방식
+
+		// 이벤트 대상은 부모태그. 그리고 매개변수2에 직접적으로 이벤트를 걸고 싶은 선택자를 넣는다
+		$(".btn_test").on("mouseover focus",".btn_2.on", function() {
+				alert("WELCOME!");
+		});
+		$(".btn_2").addClass("on");
+});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p><button class="btn_1">버튼1</button></p>
+		<p class="btn_test"><button class="btn_2">버튼2</button></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+이벤트란 사이트에서 사용자가 취하는 모든 행위
+
+
+mouseover / mouseenter : 마우스 올렸을 때
+mouseout / mouseleave : 마우스 뗐을 때
+
+둘의 차이점은 교재 259~260p과
+https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseleave_mouseout 을 참고
+
+
+keydown, keypress : 키보드 눌렀을 때. 둘의 차이는 교재 272p
+keyup : 키보드 뗐을 때
+
+
+$(this) 선택자에 대한 설명은 교재 274p 참고

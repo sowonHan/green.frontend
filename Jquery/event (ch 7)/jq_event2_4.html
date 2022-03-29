@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function () {
+			$(document).on("keydown", keyEventFnc);
+
+			function keyEventFnc(e) {
+				// console.log(e) 찍어보면 e에는 키보드를 누른 이벤트 동작에 대한 정보가 담겨있다. 그 중에서 keyCode를 사용
+				var direct = "";
+
+				switch (e.keyCode) {
+					case 37: direct = "LEFT";
+						break;
+					case 38: direct = "TOP";
+						break;
+					case 39: direct = "RIGHT";
+						break;
+					case 40: direct = "BOTTOM";
+						break;
+				}
+
+				// 화면에 보이게 하는 코드. 문자열이 있으면 참이고 빈 문자면 거짓이니까, 참일 경우 value에 direct 문자열을 넣어서 input 칸에 보이게 함
+				if (direct) $("#user_id").val(direct);
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<p><input type="text" name="user_id" id="user_id" value="blarblar"></p>
+</body>
+
+</html>

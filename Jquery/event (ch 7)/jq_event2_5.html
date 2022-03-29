@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery-3.6.0.js"></script>
+<script>
+$(function(){
+	$(".menuWrap_1 a").on("click", function(e) {
+		e.preventDefault();
+
+		$(".menuWrap_1 a")
+		.css({"background-color":"#fff"});
+
+		$(this)
+		.css({"background-color":"#ff0"});
+	});
+
+	$(".menuWrap_2 a").on("click", function(e) {
+		e.preventDefault();
+
+		$(".menuWrap_2 a")
+		.css({"background-color":"#fff"});
+
+		// 선택한 객체의 인덱스 번호를 가져와 idx에 넣는다
+		var idx = $(".menuWrap_2 a").index(this);
+		
+		// eq()는 0328_7 파일 참고
+		$(".menuWrap_2 a").eq(idx)
+		.css({"background-color":"#0ff"});
+		
+		$(".idxNum").text(idx);
+	});
+});
+</script>
+</head>
+<body>
+<h2>$(this)</h2>
+	<ul class="menuWrap_1">
+		<li><a href="#">메뉴1</a></li>
+		<li><a href="#">메뉴2</a></li>
+		<li><a href="#">메뉴3</a></li>
+	</ul>
+<h2>Index( )</h2>   
+	<ul class="menuWrap_2">
+		<li><a href="#">메뉴4</a></li>
+		<li><a href="#">메뉴5</a></li>
+		<li><a href="#">메뉴6</a></li>
+	</ul>
+<p class="idxNum"></p>
+</body>
+</html>

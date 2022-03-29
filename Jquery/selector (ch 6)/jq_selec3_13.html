@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="../js/jquery-3.6.0.js"></script>
+<script>
+	$(function( ){
+		// 감싸고 있는 거 없앰
+		$("strong").unwrap(); 
+		// 각각 감싸줌
+		$(".ct1").wrap("<div/>");
+		// 통째로 감싸줌
+		$(".ct2").wrapAll("<div/>");
+		// 안쪽으로 감싼다 콘텐츠 '내용3,4'를 감싸게 된다고 보면 됨
+		$("li").wrapInner("<h3/>");
+	});
+</script>
+<style>
+	div{background-color:aqua;}
+</style>
+</head>
+<body>
+	<h1 id="tit_1">
+		<strong>객체 조작 및 생성</strong>
+	</h1>
+	<p class="ct1">내용1</p>
+	<p class="ct1">내용2</p>
+	<p class="ct2">내용3</p>
+	<p class="ct2">내용4</p>
+	<ul>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>

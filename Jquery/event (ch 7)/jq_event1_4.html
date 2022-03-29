@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		$(function () {
+			// DOM의 로딩이 끝난 다음 실행
+			$(document).ready(function () {
+				var h1 = $(".img1").height();
+				console.log("ready :", h1);
+			});
+
+			// DOM이 먼저 로딩되고 그 다음 이미지와 비디오까지 전부 불러온 뒤에 실행
+			// JQuery 3.0 버전 이후로 load() 기능이 제거돼서 아래처럼 써야만 제대로 작동됨
+			$(window).on('load', function () {
+				var h2 = $(".img1").height();
+				console.log("load :", h2);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p>
+		<img src="http://place-hold.it/300X300" class="img1">
+	</p>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		$(function () {
+			// mousemove : 마우스가 움직일 때마다 마우스 포인터의 좌푯값을 불러온다
+			$(document).on("mousemove", function (e) {
+				// 콘솔로그(e) 찍어보면 엄청나게 많은 정보가 나옴^^...이 부분은 교재 263p 참고
+				$(".posX").text(e.pageX);
+				$(".posY").text(e.pageY);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>mousemove</h1>
+	<p>X : <span class="posX">0</span>px</p>
+	<p>Y : <span class="posY">0</span>px</p>
+</body>
+
+</html>

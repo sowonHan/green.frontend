@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="../js/jquery-3.6.0.js"></script>
+<script>
+	$(function(){
+        // 내용1을 포함하는 애를 선택
+		$("#inner_1 p:contains(내용1)")
+		.css({"background-color":"#ff0"});
+
+        // strong태그를 가진 애를 선택
+		$("#inner_1 p:has(strong)")
+		.css({"background-color":"#0ff"});
+
+        // 가장 가까운 하위 요소
+		$("#outer_wrap").contents()
+		.css({"border":"1px dashed #00f"});
+
+        // inner_2의 p태그들 중 첫번째만 제외
+		$("#inner_2 p").not(":first")
+		.css({"background-color":"#0f0"});
+
+        // 필터링된 이전 요소를 없앤다. eq(2)가 없어졌다고 보면 됨
+		$("#inner_2 p").eq(2).end()
+		.css({"color":"#f00"});
+	});
+</script>
+</head>
+<body>
+	<div id="outer_wrap">
+		<h1>콘텐츠 탐색 선택자</h1>
+		<section id="inner_1">
+			<h1>contains( ), contents( ), has( )</h1>
+			<p><span>내용1</span></p>
+			<p><strong>내용2</strong></p>
+			<p><span>내용3</span></p>
+		</section>
+		<section id="inner_2">
+			<h1>not( ), end( )</h1>
+			<p>내용4</p>
+			<p>내용5</p>
+			<p>내용6</p>
+		</section>
+	</div>
+</body>
+</html>

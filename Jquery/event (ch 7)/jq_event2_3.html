@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	// change : 대상에 변화가 있을 때 함수 실행
+	$("#rel_site").on("change", function(){
+		// 현재 이벤트가 발생한 객체(id rle_site)의 value값을 클래스 txt가 있는 p 태그의 콘텐츠 영역에 넣는다
+		$(".txt").text($(this).val());
+	});
+});
+</script>
+</head>
+<body>
+<select id="rel_site">
+		<option value="">사이트 선택</option>
+		<option value="www.google.com">구글</option>
+		<option value="www.naver.com">네이버</option>
+		<option value="www.daum.net">다음</option>
+</select>
+<p class="txt"></p>
+</body>
+</html>

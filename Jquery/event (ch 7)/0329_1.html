@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>이벤트 등록 방식</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script>
+        // 단독 이벤트 등록. 하나만 등록할 수 있어서!
+        /* $('#btn') : 이벤트 대상
+        click() : 이벤트 등록 메소드. 특정 동작, 즉 특정 이벤트를 지정하는 것
+        function(){} : 이벤트 핸들러. 이벤트가 발생했을 때 코드를 실행하는 것 */
+        // click은 마우스 클릭했을 때
+        $('#btn').click(function(){
+            console.log('hi');
+        });
+
+        // 그룹 이벤트 등록 방식 (1)
+        // .on('이벤트명', 함수)
+        // mouseover와 focus 두 가지의 이벤트가 등록된 것. focus는 tab키 눌렀을 때 초점 맞춰지는 거
+        $('#btn').on("mouseover focus", function(){
+            console.log('hello');
+        });
+
+        // (2) 1과 결과는 똑같다
+        $('#btn').on({
+            "mouseover focus": function() {
+                console.log('hello');
+            }
+        });
+
+        // (3) 이벤트에 따라 다른 결과를 주고 싶을 때. 2와 3은 객체데이터 형식이라고 생각하면 될 거 같다
+        $('#btn').on({
+            "mouseover": function() {
+                console.log('hello');
+            },
+            "focus": function() {
+                console.log('bye');
+            }
+        });
+    </script>
+</body>
+</html>
