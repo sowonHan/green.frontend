@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 라이브러리 파일을 수정해가며 작업할 때는 all.css를 연결시키고 그게 아니면 용량을 줄이기 위해 min.css를 쓴다. -->
-    <link rel="stylesheet" href="./library/fontawesome-free-6.0.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./library/bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../library/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/weather_location.css">
+    <link rel="stylesheet" href="../library/bootstrap-5.1.1-dist/css/bootstrap.min.css">
 
     <title>Accue Weather</title>
 </head>
@@ -19,7 +19,7 @@
         <div class="gnb_container">
             <div class="gnb menu">
                 <div class="logo">
-                    <a href="#"><img src="./img/logo.svg" alt="로고"/></a>
+                    <a href="#"><img src="../img/logo.svg" alt="로고"/></a>
                 </div>
                 <ul class="nav">
                     <li>
@@ -78,68 +78,15 @@
     <div id="mobile_menu"></div>
     
     <div id="main_content">
-        <div id="main_top">
-            <article>
-                <div>
-                    <img src="https://via.placeholder.com/960x250.png" alt="광고">
-                </div>
-            </article>
-        </div>
-        <div id="main_container">
-            <section id="main_section">
-                <article id="weather_map">
-                    <h5>대한민국 기상 레이더</h5>
-                    <div id="map"></div>
-                </article>
-                <article id="weather_location">
-                    <h5>대한민국 기상 상태</h5>
-                    <div id="forecast">
-                        <a href="#" class="location">
-                            <span class="q" id="seoul">서울특별시</span>
-                            <span class="icon_weather"><img src="https://openweathermap.org/img/wn/01d.png" alt="날씨아이콘"></span>
-                            <span class="temp">-℃</span>
-                        </a>
-                        <a href="#" class="location">
-                            <span class="q" id="incheon">인천광역시</span>
-                            <span class="icon_weather"><img src="https://openweathermap.org/img/wn/01d.png" alt="날씨아이콘"></span>
-                            <span class="temp">-℃</span>
-                        </a>
-                        <a href="#" class="location">
-                            <span class="q" id="busan">부산광역시</span>
-                            <span class="icon_weather"><img src="https://openweathermap.org/img/wn/01d.png" alt="날씨아이콘"></span>
-                            <span class="temp">-℃</span>
-                        </a>
-                        <a href="#" class="location">
-                            <span class="q" id="gwangju">광주광역시</span>
-                            <span class="icon_weather"><img src="https://openweathermap.org/img/wn/01d.png" alt="날씨아이콘"></span>
-                            <span class="temp">-℃</span>
-                        </a>
-                        <a href="#" class="location">
-                            <span class="q" id="jeju">제주시</span>
-                            <span class="icon_weather"><img src="https://openweathermap.org/img/wn/01d.png" alt="날씨아이콘"></span>
-                            <span class="temp">-℃</span>
-                        </a>
-                        <a href="#" class="location">
-                            <span class="q" id="jeonju">전주시</span>
-                            <span class="icon_weather"><img src="https://openweathermap.org/img/wn/01d.png" alt="날씨아이콘"></span>
-                            <span class="temp">-℃</span>
-                        </a>
-                    </div>
-                </article>
-                <article id="weather_add">
-                    <div id="add">
-                        추가 기상 예보 대한민국개
-                    </div>
-                </article>
-            </section>
-            <aside id="main_aside">
-                <div>
-                    <img src="https://via.placeholder.com/210x400.png" alt="광고">
-                </div>
-                <div>
-                    <img src="https://via.placeholder.com/210x400.png" alt="광고">
-                </div>
-            </aside>
+        <div class="forecast_pane">
+            <span>*온도: </span>
+            <span id="temp"></span>
+            <br />
+            <span>*풍속: </span>
+            <span id="wind"></span>
+            <br />
+            <span>*습도: </span>
+            <span id="humidity"></span>
         </div>
     </div>
 
@@ -165,13 +112,10 @@
     </footer>
 
     <!-- 라이브러리 -->
-    <script src="./library/JQuery/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a7d83c71e79499b2ef2282865eb3861"></script>
-    <script src="./js/map.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/forecast.js"></script>
-    <!-- main.js가 map.js와 forecast.js를 불러와 사용하기 때문에 map과 forecast 소스가 main보다 위에 와야한다 -->
-    <script src="./js/main.js"></script>
+    <script src="../library/JQuery/jquery-3.6.0.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/forecast.js"></script>
+    <script src="../js/weather_location.js"></script>
 
 </body>
 </html>

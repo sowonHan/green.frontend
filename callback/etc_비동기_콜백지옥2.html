@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 콜백함수1- 제이쿼리 이벤트 */
+        // $( "#target" ).click(function() {
+        // alert( "Handler for .click() called." );
+        // });
+
+
+        /* 콜백함수2 */
+        //콜백함수 선언
+        // function add(x, callback) {
+        //     let sum = x + x;
+        //     console.log(sum);
+        /* sum의 값이 나온 다음 callback 함수를 실행시킨다는 뜻.
+        실제로 매개변수를 넣은 아래 함수에서는 2와 2가 더해진 4가 도출된 다음 res 함수가 실행되는 것 */
+        //     callback(sum);
+        // }
+
+        // add(2, res=>{
+        //     console.log('finish: ' + res);
+        // });
+
+
+        /* 콜백 지옥 */
+
+        // function add(x, callback) {
+        //     let sum = x + x;
+        //     console.log(sum);
+        //     callback(sum);
+        // }
+
+        // add(2, res=>{
+        //     add(res, res=>{
+        //         add(res, res=>{
+        //             console.log('finish: ' + res);
+        //         });
+        //     });
+        // });
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

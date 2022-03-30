@@ -100,6 +100,27 @@ ul { list-style: none; }
     display: none;
 }
 
+/* 모바일 메뉴 */
+#mobile_menu {
+    display: none;
+    background: black;
+    color: white;
+    /* 로고 있는 부분의 높이가 60px */
+    height: calc(100vh - 60px);
+    width: 100vw;
+    position: fixed;
+    top: 60px;
+    z-index: 100;
+}
+
+#mobile_menu a {
+    color: white;
+}
+
+#mobile_menu > ul.nav > li {
+    padding: 15px 20px;
+}
+
 /* Fade in 애니메이션 */
 .appear {
     /* fade-in은 js 변수처럼 이름을 임의로 지정해주는 것 */
@@ -115,6 +136,67 @@ ul { list-style: none; }
     }
 }
 
+/* 메뉴바 underline 효과 */
+.underline {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.underline:after {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: tomato;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* 검색 창 */
+#main_header > #search_box {
+    position: relative;
+    top: 200px;
+}
+
+#main_header > #search_box > div#search_bar {
+    /* 부트스트랩 바는 기본적으로 width 100%라서 부모태그에게 너비를 지정해주면 알아서 맞춰진다 */
+    width: 650px;
+    margin: 0 auto;
+}
+
+#main_header > #search_box > div#current_location {
+    width: 300px;
+    height: 35px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+#main_header > #search_box > div#current_location > div:nth-child(1) {
+    float: left;
+    text-align: center;
+    line-height: 35px;
+}
+
+#main_header > #search_box > div#current_location > div:nth-child(2) {
+    float: right;
+    text-align: center;
+    line-height: 35px;
+}
+
+
+/* 푸터 */
 #main_footer {
     height: 150px;
 }
@@ -143,6 +225,10 @@ ul { list-style: none; }
 /* 미디어 쿼리. 이렇게 3개가 디폴트 사이즈 */
 /* 주의점 : 미디어 쿼리는 반드시 기본 설정보다 아래에 작성해야 한다. 캐스케이딩 특성상 그보다 위에 작성하면 적용 안 됨 */
 @media screen and (max-width: 767px) {
+    #mobile_menu .nav {
+        display: unset;
+    }
+    
     #main_header {
         background: url('../img/425x450.jpg');
         background-size: cover;
@@ -169,6 +255,13 @@ ul { list-style: none; }
         text-align: left;
     }
 
+    #main_header > #search_box > div#search_bar {
+        width: 85vw;
+    }
+
+    #main_header > #search_box > div#current_location {
+        width: 85vw;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
