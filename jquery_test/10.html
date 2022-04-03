@@ -31,8 +31,7 @@
     <script>
         $(function() {
             $("input").on("click", function() {
-                let test = $("tr:first").html();
-                console.log(test);
+                let test = $("tr:first").siblings().html();
             });
         });
     </script>
