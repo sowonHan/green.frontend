@@ -3,80 +3,109 @@
 
 <head>
   <meta charset='utf-8' />
-  <link href='./fullcalendar-5.10.2/lib/main.min.css' rel='stylesheet' />
-  <link rel="stylesheet" href="./fullcalendar-5.10.2/lib/locales-all.min.js">
-  <script src='./fullcalendar-5.10.2/lib/main.min.js'></script>
+  <link href='./fullcalendar-5.10.2/lib/main.css' rel='stylesheet' />
+  <link rel="stylesheet" href="./fullcalendar-5.10.2/lib/locales-all.js">
+  <script src='./fullcalendar-5.10.2/lib/main.js'></script>
   <script>
 
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
 
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialDate: '2020-09-12',
+        initialDate: '2022-04-01',
         editable: true,
         selectable: true,
         businessHours: true, // 주말에 회색 배경 생김
-        dayMaxEvents: true, // allow "more" link when too many events
+        dayMaxEvents: true, // allow "more" link when too many events,
+        expandRows: true,
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,listWeek'
+        },
         locale: 'ko', // 한국어 설정
+        // 이거 코딩할 때 스케쥴 json으로 만들어야 할 듯....
         events: [
           {
-            title: 'All Day Event',
-            start: '2020-09-01'
+            title: '경복궁 개화',
+            start: '2022-04-01',
+            end: '2022-04-20',
+            color: 'pink'
+            // url: ㅇㅇㅇ는 나중에 코딩할 때 넣기
           },
           {
-            title: 'Long Event',
-            start: '2020-09-07',
-            end: '2020-09-10'
+            title: '창덕궁 개화',
+            start: '2022-03-12',
+            end: '2022-05-10',
+            color: '#5289f7'
+          },
+          {
+            title: '창경궁 개화',
+            start: '2022-03-20',
+            end: '2022-04-30',
+            color: '#f76157'
+          },
+          {
+            title: '덕수궁 개화',
+            start: '2022-03-22',
+            end: '2022-05-10',
+            color: '#fcf98b',
+            textColor: 'black'
           },
           {
             groupId: 999,
-            title: 'Repeating Event',
-            start: '2020-09-09T16:00:00'
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-02',
+            color: '#429e52'
           },
           {
             groupId: 999,
-            title: 'Repeating Event',
-            start: '2020-09-16T16:00:00'
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-03',
+            color: '#429e52'
           },
           {
-            title: 'Conference',
-            start: '2020-09-11',
-            end: '2020-09-13'
+            groupId: 999,
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-09',
+            color: '#429e52'
           },
           {
-            title: 'Meeting',
-            start: '2020-09-12T10:30:00',
-            end: '2020-09-12T12:30:00'
+            groupId: 999,
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-10',
+            color: '#429e52'
           },
           {
-            title: 'Lunch',
-            start: '2020-09-12T12:00:00'
+            groupId: 999,
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-16',
+            color: '#429e52'
           },
           {
-            title: 'Meeting',
-            start: '2020-09-12T14:30:00'
+            groupId: 999,
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-17',
+            color: '#429e52'
           },
           {
-            title: 'Happy Hour',
-            start: '2020-09-12T17:30:00'
+            groupId: 999,
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-23',
+            color: '#429e52'
           },
           {
-            title: 'Dinner',
-            start: '2020-09-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2020-09-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2020-09-28'
+            groupId: 999,
+            title: '역사와 함께하는 창경궁 나무 이야기',
+            start: '2022-04-24',
+            color: '#429e52'
           }
         ]
       });
 
       calendar.render();
+      calendar.updateSize();
     });
 
   </script>
@@ -99,13 +128,12 @@
     }
 
     .div2 {
-      width: 800px;
-      height: 800px;
+      width: 1000px;
       margin: 0 auto;
     }
 
     #calendar {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
 

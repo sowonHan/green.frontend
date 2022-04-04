@@ -3,3 +3,15 @@
 경복궁 http://www.royalpalace.go.kr/
 창덕궁 http://www.cdg.go.kr/default.jsp
 창경궁 https://cgg.cha.go.kr/agapp/main/index.do?siteCd=CGG
+경복궁 옆 국립고궁박물관 https://www.gogung.go.kr/main.do
+한국문화재재단 https://www.chf.or.kr/cms/content/view/234
+
+초기화코드 https://meyerweb.com/eric/tools/css/reset/
+
+메뉴참고 https://www.sliderrevolution.com/resources/css-menu/
+
+버튼참고 https://www.sliderrevolution.com/resources/css-button-hover-effects/
+
+스크롤 https://michalsnik.github.io/aos/
+
+서브페이지 스크롤 참고 사이트 https://www.sssak.co.kr/kr/
