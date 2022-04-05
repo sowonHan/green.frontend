@@ -15,3 +15,6 @@
 스크롤 https://michalsnik.github.io/aos/
 
 서브페이지 스크롤 참고 사이트 https://www.sssak.co.kr/kr/
+
+메뉴랑 슬라이더 한국의 집 https://www.chf.or.kr/kh 참고하고
+캘린더는 개화기간 겹치는 부분 백그라운드로 넣고 남는 날짜는 일일이든 바로 넣든 해서 추가
